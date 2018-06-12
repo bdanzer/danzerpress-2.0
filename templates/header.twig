@@ -1,34 +1,22 @@
-<nav id="menu" class="menu nav-primary">
-        <header class="menu-header">
-          <h1><a class="brand" href="{{ function('home_url', '/') }}">{{ function('bloginfo', 'name') }}</a></h1>
-        </header>
-    
-        <section class="menu-section">
-            <ul class="menu-section-list">
+<header role="banner">
+  <button type="button" class="drawer-toggle drawer-hamburger">
+    <span class="sr-only">toggle navigation</span>
+    <span class="drawer-hamburger-icon"></span>
+  </button>
+  <nav class="drawer-nav" role="navigation">
+    <ul class="drawer-menu">
+      <li><a class="drawer-brand" href="{{ function('home_url', '/') }}">{{ function('bloginfo', 'name') }}</a></li>
       {% for item in menu.get_items %}
-            <li class="nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
-                {% if item.get_children %}
-                    <ul class="nav-drop">
-                        {% for child in item.get_children %}
-                            <li class="nav-drop-item"><a href="{{child.get_link}}">{{child.title}}</a></li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
-        </ul>
-    </section>
-
-      <section class="menu-section">
-        <h3 class="menu-section-title">Docs</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">Installation</a></li>
-          <ul>
-              <li>Hello WOrld</li>
-          </ul>
-          <li><a href="https://github.com/mango/slideout#usage" target="_blank">Usage</a></li>
-          <li><a href="https://github.com/mango/slideout#api" target="_blank">API</a></li>
-          <li><a href="https://github.com/mango/slideout#npm-scripts" target="_blank">npm-scripts</a></li>
-        </ul>
-      </section>
-</nav>
+          <li class="drawer-brand nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
+              {% if item.get_children %}
+                  <ul class="nav-drop">
+                      {% for child in item.get_children %}
+                          <li class="nav-drop-item"><a href="{{child.get_link}}">{{child.title}}</a></li>
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

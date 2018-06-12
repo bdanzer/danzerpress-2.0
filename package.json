@@ -56,6 +56,5 @@
     "wiredep": "^2.2.2"
   },
   "dependencies": {
-    "slideout": "^1.0.1"
   }
 }

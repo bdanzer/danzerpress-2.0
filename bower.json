@@ -6,7 +6,14 @@
   ],
   "license": "MIT",
   "private": true,
-  "overrides": {
-  
+  "overrides": {},
+  "dependencies": {
+    "wow": "wowjs#^1.1.2",
+    "drawer": "^3.2.2",
+    "jquery": "2.2.4",
+    "iscroll": "^5.2.0"
+  },
+  "resolutions": {
+    "iscroll": "~5.1.3"
   }
 }

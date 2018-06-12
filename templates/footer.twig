@@ -4,19 +4,4 @@
     </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-<script>
-  var slideout = new Slideout({
-    'panel': document.getElementById('panel'),
-    'menu': document.getElementById('menu'),
-    'padding': 256,
-    'tolerance': 70
-  });
-
-  // Toggle button
-  document.querySelector('.toggle-button').addEventListener('click', function() {
-    slideout.toggle();
-  });
-</script>
-
 {{ function('wp_footer') }}

@@ -3,14 +3,9 @@
 
     {% include 'templates/head.twig' %}
 
-    <body {{ function('body_class') }}>
+    <body class="drawer drawer--left">
         {% include 'templates/header.twig' %}
-        <div id="panel" class="panel slideout-panel slideout-panel-left" role="document">
-            <header class="panel-header">
-                <button class="btn-hamburger js-slideout-toggle toggle-button"></button>
-                <img class="logo" src="https://danzerpress.com/wp-content/uploads/2018/01/xdanzerpressofficial-e1516152155615.png.pagespeed.ic.ZBN5_Q9DvF.webp">
-            </header>
-        
+
             {% block body %}
 
                 <div class="content row">
@@ -27,8 +22,6 @@
                 </div>
                 
             {% endblock %}
-        </div>
-
 
         {% include 'templates/footer.twig' %}
     </body>

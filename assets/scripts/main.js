@@ -18,25 +18,11 @@
     // All pages
     'common': {
       init: function() {
-        
-        document.addEventListener("scroll", function(){
-          var y = window.scrollY;
-          if (y > 0 && y != 0) {
-            document.querySelector('.panel-header').classList.add('fixed');
-            console.log(y);
-          } else {
-            document.querySelector('.panel-header').classList.remove('fixed');
-          }
-            
-        });
 
-        document.querySelector('.toggle-button').addEventListener("click", function(){
-          console.log(document.querySelector('.fixed').style.top);
-          if (document.querySelector('.fixed').style.top && document.querySelector('.fixed').style.top != '0px') {
-            document.querySelector('.fixed').style.top = 0;
-          } else {
-            document.querySelector('.fixed').style.top = window.scrollY + 'px';
-          }
+        new WOW().init();
+
+        $(document).ready(function() {
+          $('.drawer').drawer();
         });
         
       },
