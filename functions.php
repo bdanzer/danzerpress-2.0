@@ -49,3 +49,23 @@ if( function_exists('acf_add_options_page') ) {
     'parent_slug' => 'theme-general-settings',
   ));
 }
+
+/**
+ * Enqueue scripts and styles.
+ */
+function danzerpress_scripts() {
+
+  //Enqueue Main Style Sheet
+  wp_enqueue_style( 'danzerpress-style', get_stylesheet_uri() );
+
+  // Animate.css
+  wp_enqueue_style('animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+
+  // Font Awesome
+  wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/3be2183bb5.js', array(), null, true );
+    
+  // Google Fonts
+  wp_enqueue_style( 'google fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Raleway:400,500,700,800|Roboto', false);
+
+}
+add_action( 'wp_enqueue_scripts', 'danzerpress_scripts' );
