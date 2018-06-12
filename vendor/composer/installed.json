@@ -25,7 +25,7 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2016-01-27 12:54:22",
+        "time": "2016-01-27T12:54:22+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "Composer\\Installers\\Plugin",
@@ -98,6 +98,28 @@
             "zend",
             "zikula"
         ]
+    },
+    {
+        "name": "wpackagist-plugin/show-current-template",
+        "version": "0.3.0",
+        "version_normalized": "0.3.0.0",
+        "source": {
+            "type": "svn",
+            "url": "http://plugins.svn.wordpress.org/show-current-template/",
+            "reference": "tags/0.3.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://downloads.wordpress.org/plugin/show-current-template.0.3.0.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "composer/installers": "~1.0"
+        },
+        "type": "wordpress-plugin",
+        "installation-source": "dist",
+        "homepage": "https://wordpress.org/plugins/show-current-template/"
     },
     {
         "name": "wpackagist-plugin/timber-library",

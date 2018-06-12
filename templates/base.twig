@@ -4,26 +4,33 @@
     {% include 'templates/head.twig' %}
 
     <body {{ function('body_class') }}>
-
         {% include 'templates/header.twig' %}
+        <div id="panel" class="panel slideout-panel slideout-panel-left" role="document">
+            <header class="panel-header">
+                <button class="btn-hamburger js-slideout-toggle toggle-button"></button>
+                <img class="logo" src="https://danzerpress.com/wp-content/uploads/2018/01/xdanzerpressofficial-e1516152155615.png.pagespeed.ic.ZBN5_Q9DvF.webp">
+            </header>
+        
+            {% block body %}
 
-        <div class="wrap container" role="document">
-            <div class="content row">
-                <main class="col-md-8">
-                    {% block content %}{% endblock %}
-                </main>
-                {% if display_sidebar %}
-                    <aside class="sidebar col-md-4">
-                        {% block sidebar %}
-                            {% include 'templates/sidebar.twig' %}
-                        {% endblock %}
-                    </aside>
-                {% endif %}
-            </div>
+                <div class="content row">
+                    <main class="col-md-8">
+                        {% block content %}{% endblock %}
+                    </main>
+                    {% if display_sidebar %}
+                        <aside class="sidebar col-md-4">
+                            {% block sidebar %}
+                                {% include 'templates/sidebar.twig' %}
+                            {% endblock %}
+                        </aside>
+                    {% endif %}
+                </div>
+                
+            {% endblock %}
         </div>
 
-        {% include 'templates/footer.twig' %}
 
+        {% include 'templates/footer.twig' %}
     </body>
 
 </html>

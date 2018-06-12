@@ -22,6 +22,6 @@
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "https://dev1.danzerpress.com"
   }
 }

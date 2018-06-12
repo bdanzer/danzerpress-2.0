@@ -1,0 +1,23 @@
+<div class="danzerpress-flex-row">
+	{% if (layout.hero_layout == 1) %}
+	<div class="danzerpress-two-thirds danzerpress-col-center danzerpress-align-center">
+	
+		{% if (layout.section_icon) %}
+			<div class="danzerpress-icon-img wow zoomIn">
+				<img src="{{ layout.section_icon }}">
+			</div>
+		{% endif %} 
+
+		<div class="danzerpress-section-content">
+			<h2 class="danzerpress-title <!-- <?php echo $danzerpress_font_color; ?> --> wow fadeIn" style="">{{ layout.section_title }}</h2>
+			<p class="danzerpress-hero-p <!-- <?php echo $danzerpress_font_color; ?> --> wow fadeIn" style="font-size: 20px;">{{ layout.section_description }}</p>
+
+			{% include 'templates/danzerpress-sections/content-buttons.twig' %}
+		</div>
+	</div>
+
+	{% elseif (layout.hero_layout == 2 or layout.hero_layout == 3) %}
+		{% include 'templates/danzerpress-sections/hero-section-w-side-image-content.twig' %}
+	{% endif %} 
+
+</div>
