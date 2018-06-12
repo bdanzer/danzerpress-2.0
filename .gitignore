@@ -10,7 +10,7 @@ vendor
 
 
 # Created by https://www.gitignore.io/api/composer
-
+package-lock.json
 ### Composer ###
 composer.phar
 /vendor/
