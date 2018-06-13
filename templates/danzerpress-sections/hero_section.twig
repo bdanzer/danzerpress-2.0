@@ -9,8 +9,8 @@
 		{% endif %} 
 
 		<div class="danzerpress-section-content">
-			<h2 class="danzerpress-title <!-- <?php echo $danzerpress_font_color; ?> --> wow fadeIn" style="">{{ layout.section_title }}</h2>
-			<p class="danzerpress-hero-p <!-- <?php echo $danzerpress_font_color; ?> --> wow fadeIn" style="font-size: 20px;">{{ layout.section_description }}</p>
+			<h2 class="danzerpress-title {{ dp.get_color(layout.background_type) }} wow fadeIn" style="">{{ layout.section_title }}</h2>
+			<p class="danzerpress-hero-p {{ dp.get_color(layout.background_type) }} wow fadeIn" style="font-size: 20px;">{{ layout.section_description }}</p>
 
 			{% include 'templates/danzerpress-sections/content-buttons.twig' %}
 		</div>
