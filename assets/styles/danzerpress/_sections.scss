@@ -14,6 +14,9 @@
     margin: auto;
     margin-bottom: 10px;
 }
+.danzerpress-icon-img img {
+    width: 100%;
+}
 .danzerpress-section-content h2, 
 .danzerpress-section-content p {
     text-align: center;
@@ -55,6 +58,16 @@ div.half-and-half {
     line-height: 0px;
     overflow: hidden;
     border: 1px solid #201927;
+    position: relative;
+    width: 100%;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
 }
 .danzerpress-image-section .danzerpress-section-content p.image-section-p {
     font-size: 18px;
