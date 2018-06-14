@@ -24,8 +24,25 @@
 
 /*half and half section*/
 div.half-and-half {
-    /*background: transparent !important;*/
+    background: transparent;
     padding: 0px;
+    .danzerpress-wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+    .parallax-window {
+        position: relative;
+        &.danzerpress-icon-fade {
+            background: rgba(255, 255, 255, 0.47843137254901963);
+        }
+        .danzerpress-icon-img {
+            position: absolute;
+            top: 50%;  /* position the top  edge of the element at the middle of the parent */
+            left: 50%; /* position the left edge of the element at the middle of the parent */
+
+            transform: translate(-50%, -50%);
+        }
+    }
 }
 .half-and-half .danzerpress-wrap,
 .half-and-half .danzerpress-flex-row,
