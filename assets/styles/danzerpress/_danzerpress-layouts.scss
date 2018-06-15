@@ -8,6 +8,7 @@ Documentation: https://layouts.danzerpress.com
 ##Fonts
 ##Styles
 	*Contact form 7*
+	*Fancybox*
 ##Section Wraps
 ##Override Colors
 ##Override Display
@@ -170,6 +171,12 @@ input[type="submit"] {
 .danzerpress-button-off {
     background: #494949;
     border-color: #494949;
+}
+/*Fancybox*/
+[data-fancybox] {
+	&:hover {
+	    cursor: pointer;
+	}
 }
 /*Contact form 7*/
 span.wpcf7-not-valid-tip {

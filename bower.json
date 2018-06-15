@@ -12,7 +12,8 @@
     "drawer": "^3.2.2",
     "jquery": "2.2.4",
     "iscroll": "^5.2.0",
-    "parallax.js": "^1.5.0"
+    "parallax.js": "^1.5.0",
+    "fancybox": "^3.3.5"
   },
   "resolutions": {
     "iscroll": "~5.1.3"
