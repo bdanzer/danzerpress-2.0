@@ -1,0 +1,67 @@
+.danzerpress-admin {
+	header {
+	    top: 32px;
+	}
+}
+.drawer--navbarTopGutter {
+    padding-top: 0;
+}
+.drawer-navbar {
+	background: transparent;
+    border: none;
+    transition: .5s;
+	&.drawer-navbar--fixed {
+		.drawer-container {
+		    display: flex;
+			justify-content: space-between;
+			.drawer-navbar-header {
+				background: transparent;
+			}
+			.drawer-nav {
+				display: flex;
+			    flex-direction: column;
+			    align-items: center;
+			    background: transparent;
+			}
+			.drawer-menu {
+				flex: 1 0 auto;
+			    display: flex;
+			    flex-direction: row;
+			    background: transparent;
+			    li {
+			    	transition: .75s;
+			    	border-width: 4px 0 0;
+				    border-color: transparent;
+				    border-style: solid;
+				    padding: 0 15px 4px;
+				    font-family: "Raleway",Helvetica,Arial,sans-serif;
+				    padding-left: 17px;
+				    padding-right: 17px;
+				    font-size: 13px;
+				    font-weight: 600;
+				    text-transform: uppercase;
+				    letter-spacing: 1px;
+				    display: flex;
+				    flex: 1 0 auto;
+				    align-items: center;
+				    &:hover {
+				    	border-color: red;
+				    	border-style: solid;
+				    }
+				    a {
+				    	color: white;
+				    }
+			    }
+			}
+		}
+	}
+	&.danzerpress-non-trans {
+    	background: #fff;
+    	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.078);
+		li {
+			a {
+				color: black !important;
+			}
+		}
+    }
+}
