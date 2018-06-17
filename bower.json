@@ -6,7 +6,6 @@
   ],
   "license": "MIT",
   "private": true,
-  "overrides": {},
   "dependencies": {
     "wow": "wowjs#^1.1.2",
     "drawer": "^3.2.2",

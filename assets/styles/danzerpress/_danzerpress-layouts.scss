@@ -67,6 +67,9 @@ p {
     font-size: 16px;
     line-height: 26px;
     color: grey;
+    &:last-child {
+    	margin: 0;
+    }
 }
 .danzerpress-title {
     font-size: 40px;

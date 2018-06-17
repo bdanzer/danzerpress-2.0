@@ -48,6 +48,14 @@
               });
             } // End if
         });
+
+        $( document ).ready(function() {
+          $('.danzerpress-tilt').tilt({
+              glare: true,
+              maxGlare: .5,
+              scale: 1.1
+          })
+        });
         
       },
       finalize: function() {

@@ -9,17 +9,59 @@
     background: none;
 }
 .danzerpress-icon-img {
-    max-width: 100px;
     display: block;
-    margin: auto;
+    text-align: center;
     margin-bottom: 10px;
     img {
+        max-width: 100px;
         width: 100%;
     }
 }
 .danzerpress-section-content h2, 
 .danzerpress-section-content p {
     text-align: center;
+}
+
+/*new global?*/
+.danzerpress-section {
+    .danzerpress-left {
+        text-align: left;
+        > {
+            * {
+                text-align: left;
+            }
+        }
+    }
+    .danzerpress-center {
+        text-align: center;
+        > {
+            * {
+                text-align: center;
+            }
+        }
+    }
+    .danzerpress-right {
+        text-align: center;
+        > {
+            * {
+                text-align: right;
+            }
+        }
+    }
+    .danzerpress-justify {
+        text-align: justify;
+        > {
+            * {
+                text-align: justify;
+            }
+        }
+    }
+}
+/*Hero Section*/
+.danzerpress-hero-section {
+    .danzerpress-two-thirds {
+        max-width: 650px;
+    }
 }
 
 /*half and half section*/
