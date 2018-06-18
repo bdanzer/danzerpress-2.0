@@ -1,7 +1,9 @@
 <header class="drawer-navbar drawer-navbar--fixed" role="banner">
     <div class="drawer-container">
       <div class="drawer-navbar-header">
-        <a class="drawer-brand" href="{{ function('home_url', '/') }}">{{ function('bloginfo', 'name') }}</a>
+        <a class="drawer-brand" href="{{ function('home_url', '/') }}">
+          <img style="max-height: 60px;" src="https://dev1.danzerpress.com/app/uploads/2018/06/danzerpressofficial2.png">
+        </a>
         <button type="button" class="drawer-toggle drawer-hamburger">
           <span class="sr-only">toggle navigation</span>
           <span class="drawer-hamburger-icon"></span>
@@ -28,6 +30,6 @@
 
 {% if not fn('is_front_page') %}
   <div class="danzerpress-title-area parallax-window" data-parallax="scroll" data-image-src="https://unsplash.it/1920/1070/?random" style="display: flex;align-items: center;justify-content: center;">
-    <h1 class="danzerpress-title">Hello</h1>
+    <h1 class="danzerpress-title">{{ fn('get_the_title') }}</h1>
   </div>
 {% endif %}

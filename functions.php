@@ -64,8 +64,6 @@ function danzerpress_scripts() {
   // Google Fonts
   wp_enqueue_style( 'google fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Raleway:400,500,700,800|Roboto', false);
 
-  // Google Fonts
-  //wp_enqueue_script( 'wow', get_template_directory() . '/dist/scripts/wow.js', array(), null, true);
-
 }
 add_action( 'wp_enqueue_scripts', 'danzerpress_scripts' );
+

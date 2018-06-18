@@ -1,0 +1,8 @@
+.page {
+	background: #efefef;
+	@media screen and (min-width: 1024px) {
+		.danzerpress-main-content {
+			padding: 40px 0;
+		}
+	}
+}
