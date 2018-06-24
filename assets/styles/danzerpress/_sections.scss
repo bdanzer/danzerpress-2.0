@@ -1,0 +1,403 @@
+/*Global Section Styling*/
+.danzerpress-block-text-section .danzerpress-button-wrap,
+.danzerpress-icons-section .danzerpress-button-wrap,
+.four-image-section .danzerpress-button-wrap,
+.simple-gallery-section .danzerpress-button-wrap {
+    text-align: center;
+}
+.page-template-danzerpress-sections #primary {
+    background: none;
+}
+.danzerpress-icon-img {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    img {
+        max-width: 100px;
+        width: 100%;
+    }
+}
+.danzerpress-section-content h2, 
+.danzerpress-section-content p {
+    text-align: center;
+}
+.dp-full-height {
+    height: 100vh;
+}
+
+/*Header*/
+.danzerpress-title-area {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(45, 45, 45, 0.29));
+    background-size: cover;
+    background-position: 100% 100%;
+    padding: 170px 0;
+    background-attachment: fixed;
+    .danzerpress-title {
+        margin: 0;
+        color: white !important;
+    }
+}
+
+
+/*new global?*/
+.danzerpress-section {
+    .danzerpress-left {
+        text-align: left;
+        > {
+            * {
+                text-align: left;
+            }
+        }
+    }
+    .danzerpress-center {
+        text-align: center;
+        > {
+            * {
+                text-align: center;
+            }
+        }
+    }
+    .danzerpress-right {
+        text-align: center;
+        > {
+            * {
+                text-align: right;
+            }
+        }
+    }
+    .danzerpress-justify {
+        text-align: justify;
+        > {
+            * {
+                text-align: justify;
+            }
+        }
+    }
+}
+/*Hero Section*/
+.danzerpress-hero-section {
+    .danzerpress-two-thirds {
+        max-width: 650px;
+    }
+}
+
+/*half and half section*/
+div.half-and-half {
+    background: transparent;
+    padding: 0px;
+    .danzerpress-wrap, .danzerpress-flex-row {
+        height: 100%;
+    }
+    .danzerpress-wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+    .parallax-window {
+        position: relative;
+        &.danzerpress-icon-fade {
+            background: rgba(255, 255, 255, 0.47843137254901963);
+        }
+        .danzerpress-icon-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .danzerpress-content {
+        max-width: 70%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .half-and-half .danzerpress-order-0 {
+        display: none !important;
+    }
+    .half-and-half .danzerpress-content {
+        max-width: calc(100% - 60px);
+    }
+}
+
+/*Icon Section*/
+.danzerpress-icon-box {
+    max-width: 60px;
+    margin: 0 0 5px;
+    img {
+        width: 100%;
+    }
+}
+
+/*Image & Video Section*/
+.danzerpress-image-wrap {
+    box-shadow: 0 0.5625rem 2.8125rem 0 rgba(0, 0, 0, 0.15);
+    line-height: 0px;
+    overflow: hidden;
+    border: 1px solid #201927;
+    position: relative;
+    width: 100%;
+    padding-top: 65%;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+.danzerpress-image-section .danzerpress-section-content p.image-section-p {
+    font-size: 18px;
+}
+.danzerpress-image-section iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/*Four image and simple gallery section and portfolio section square force*/
+.four-image-section .danzerpress-image-wrap,
+.simple-gallery-section .danzerpress-image-wrap,
+.portfolio-section .danzerpress-image-wrap {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+.four-image-section img,
+.simple-gallery-section img,
+.portfolio-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.portfolio-section .danzerpress-image-wrap img:hover {
+    transition: 2s;
+    transform: scale(1.1);
+    opacity: 1;
+}
+.portfolio-section .danzerpress-image-wrap a:hover {
+    opacity: 1;
+}
+
+
+/*Post section*/
+.recent_post_section h2 {
+    line-height: 1.5;
+    margin-top: 0px;
+}
+.danzerpress-recent-post-section img,
+.danzerpress-team-member-section img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.danzerpress-col-1-fix.danzerpress-zero.danzerpress-recent-post-section img {
+    height: 200px;
+}
+.danzerpress-col-1-fix.danzerpress-zero.danzerpress-recent-post-section img:hover {
+    transform: scale(1.2);
+    transition: 1s;
+}
+.danzerpress-recent-post-section img {
+    max-height: 200px;
+}
+.recent_post_section a.danzerpress-button-modern {
+    padding: 0;
+    background: none;
+    border: none;
+    color: #06c4ec;
+    text-transform: capitalize;
+    font-weight: normal;
+    display: inline-block;
+    width: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    img.split-section-image {
+        max-height: 200px;
+    }
+}
+@media screen and (max-width: 768px) {
+    img.split-section-image {
+        max-height: 150px;
+    }
+}
+@media screen and (max-width: 500px) {
+    img.split-section-image {
+        max-height: 100%;
+    }
+}
+
+
+/*Teeam Member Section*/
+.team-member-section-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.team-member-section .fa {
+    margin-right: 20px;
+    font-size: 18px;
+}
+.danzerpress-team-member-image img:hover {
+    transform: scale(1.2);
+    transition: 1.2s;
+}
+.danzerpress-team-member-image {
+    overflow: hidden;
+}
+.team-member-section p.danzerpress-button-wrap {
+    text-align: center;
+}
+.team-member-section-container {
+    margin-bottom: 20px;
+}
+
+
+/*Testimonial Section*/
+.testimonial-section i.fa.fa-star {
+    margin: 0 4px;
+    color: #ffb500;
+}
+.testimonial-section .danzerpress-image-box img {
+    max-height: 60px;
+}
+
+
+/*Slider Revolution*/
+div.slider-revolution-section {
+    padding: 0px;
+}
+.slider-revolution-section .danzerpress-wrap {
+    width: 100%;
+}
+.rev_slider iframe {
+    border: none;
+}
+
+
+/*Faq Section*/
+/* Style the buttons that are used to open and close the danzerpress-accordion panel */
+.danzerpress-accordion {
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.accordian h4 {
+    margin: 0px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .danzerpress-accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the danzerpress-accordion panel. Note: hidden by default */
+.danzerpress-panel {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 20px;
+}
+.danzerpress-accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
+/*Slick*/
+/*Arrow Styling*/
+.slick-prev:before, .slick-next:before {
+    color: black !important;
+}
+.slick-prev {
+    left: -35px !important;
+    top: 33% !important;
+}
+.slick-next {
+    right: -35px !important;
+    top: 33% !important;
+}
+.slick-prev:before,
+.slick-next:before {
+    font-family: fontawesome !important;
+    font-size: 31px !important;
+}
+.slick-prev:before {
+    content: '\f104' !important;
+}
+.slick-next:before {
+    content: '\f105' !important;
+}
+
+/*Li styling*/
+.slick-dots li button:before {
+    display: none;
+}
+.slick-dots li {
+    margin: 0 5px !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    background-color: #333 !important;
+    height: 3px !important;
+    width: 49px !important;
+    position: relative !important;
+}
+li.slick-active {
+    background: #06c4ec !important;
+}
+@media screen and (max-width: 767px) {   
+    .slick-dots li {
+        height: 2px !important;
+        width: 32px !important;
+        position: relative !important;
+    }
+}
+
+/*Carousel*/
+.danzerpress-slick-carousel .slider-nav .slick-list.draggable {
+    margin: 0 -15px 0 !important;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 500px) {
+    .home p#danzerpress-button-1 {
+        text-align: center !important;
+    }
+    .danzerpress-icon-box {
+        position: absolute;
+        max-width: 50px !important;
+    }
+    .danzerpress-content-box {
+        margin-left: 63px !important;
+    }
+}

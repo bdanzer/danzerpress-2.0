@@ -1,0 +1,36 @@
+<header class="drawer-navbar drawer-navbar--fixed" role="banner">
+    <div class="drawer-container">
+      <div class="drawer-navbar-header">
+        <a class="drawer-brand" href="{{ function('home_url', '/') }}">
+          <img class="light-logo" style="max-height: 60px;" src="{{ fn('get_field', 'transparent_logo', 'option') }}">
+          <img class="dark-logo" style="max-height: 60px;" src="{{ fn('get_field', 'non_transparent_logo', 'option') }}">
+        </a>
+        <button type="button" class="drawer-toggle drawer-hamburger">
+          <span class="sr-only">toggle navigation</span>
+          <span class="drawer-hamburger-icon"></span>
+        </button>
+      </div>
+      <nav class="drawer-nav" role="navigation">
+        <ul class="drawer-menu ">
+            {% for item in menu.get_items %}
+                <li class="{{item.classes | join(' ')}}"><a class="{{ (item.get_children) ? 'drawer-dropdown' }}" href="{{item.get_link}}">{{item.title}}</a>
+                    {% if item.get_children %}
+                        <span class="drawer-caret"></span>
+                        <ul class="drawer-dropdown-menu">
+                            {% for child in item.get_children %}
+                                <li><a class="drawer-dropdown-menu-item" href="{{child.get_link}}">{{child.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+{% if not fn('is_front_page') %}
+  <div class="danzerpress-title-area parallax-window" data-parallax="scroll" data-image-src="https://unsplash.it/1920/1070/?random" style="display: flex;align-items: center;justify-content: center;">
+    <h1 class="danzerpress-title">{{ fn('get_the_title') }}</h1>
+  </div>
+{% endif %}
