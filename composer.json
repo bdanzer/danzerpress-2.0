@@ -19,7 +19,6 @@
   	}
 	},
   "require": {
-	  "wpackagist-plugin/timber-library": "*",
     "wpackagist-plugin/show-current-template" : "*"
   },
   "repositories": [
