@@ -171,6 +171,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5b303413fdf52",
+            "label": "Another section",
+            "name": "another_section",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -190,5 +209,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529882737
+    "modified": 1529885722
 }
