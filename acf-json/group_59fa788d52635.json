@@ -1,25 +1,6 @@
 {
     "key": "group_59fa788d52635",
     "title": "Flexible Layout",
-    "location": [
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "danzerpress-sections.php"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "acf_after_title",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
-    "active": 1,
-    "description": "",
     "fields": [
         {
             "key": "field_59fa78934bca2",
@@ -1600,6 +1581,186 @@
                     "min": "",
                     "max": ""
                 },
+                "5b34560d96b8b": {
+                    "key": "5b34560d96b8b",
+                    "name": "pricing_section",
+                    "label": "Pricing Section",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b34560d96b8c",
+                            "label": "Custom CSS Class",
+                            "name": "custom_css_class",
+                            "type": "text",
+                            "instructions": "This is not required, this is just for people who want to add more specific CSS styling.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b34560d96b8d",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b34560d96b8e",
+                            "label": "Section Description",
+                            "name": "section_description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_5b34560d96b8f",
+                            "label": "Pricing Blocks",
+                            "name": "pricing_blocks",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 3,
+                            "max": 3,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5b34560d96b93",
+                                    "label": "Pricing Name",
+                                    "name": "pricing_name",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5b34560d96b91",
+                                    "label": "Pricing Content",
+                                    "name": "pricing_content",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": "",
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_5b345b022ef79",
+                                    "label": "Price",
+                                    "name": "price",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5b34560d96b92",
+                                    "label": "Pricing Button Text",
+                                    "name": "pricing_button_text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5b3456bb96b98",
+                                    "label": "Pricing Button Target",
+                                    "name": "pricing_button_target",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "59fab4b8f30cf": {
                     "key": "59fab4b8f30cf",
                     "name": "block_text_section",
@@ -1834,5 +1995,24 @@
             "max": ""
         }
     ],
-    "modified": 1530159404
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "danzerpress-sections.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1530159942
 }
