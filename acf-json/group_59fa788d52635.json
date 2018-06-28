@@ -1,6 +1,25 @@
 {
     "key": "group_59fa788d52635",
     "title": "Flexible Layout",
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "danzerpress-sections.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
     "fields": [
         {
             "key": "field_59fa78934bca2",
@@ -1815,24 +1834,5 @@
             "max": ""
         }
     ],
-    "location": [
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "danzerpress-sections.php"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "acf_after_title",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
-    "active": 1,
-    "description": "",
-    "modified": 1529819201
+    "modified": 1530159404
 }
