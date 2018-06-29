@@ -1705,6 +1705,27 @@
                                     "key": "field_5b345b022ef79",
                                     "label": "Price",
                                     "name": "price",
+                                    "type": "number",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "min": "",
+                                    "max": "",
+                                    "step": ""
+                                },
+                                {
+                                    "key": "field_5b358dabca5e0",
+                                    "label": "Frequency",
+                                    "name": "frequency",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
@@ -2014,5 +2035,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1530159942
+    "modified": 1530236383
 }
