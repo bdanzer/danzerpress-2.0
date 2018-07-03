@@ -1,17 +1,13 @@
 {% extends "templates/base.twig" %}
 
-{% block content %}
-
-    {% for post in posts %}
-
-        {% include "templates/content.twig" with {post: post}  %}
-
-    {% endfor %}
-
-{% endblock %}
-
-{% block sidebar %}
-
-    {% include "templates/sidebar.twig" %}
-
+{% block body %}
+    <div class="main-content">
+        <div class="danzerpress-wrap">
+            <div class="danzerpress-flex-row">
+                {% for post in posts %}
+                    {% include "templates/content.twig" with {post: post}  %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

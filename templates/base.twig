@@ -7,20 +7,22 @@
         {% include 'templates/header.twig' %}
 
             {% block body %}
-
-                <div class="content row">
-                    <main class="col-md-8">
-                        {% block content %}{% endblock %}
-                    </main>
-                    {% if display_sidebar %}
-                        <aside class="sidebar col-md-4">
-                            {% block sidebar %}
-                                {% include 'templates/sidebar.twig' %}
-                            {% endblock %}
-                        </aside>
-                    {% endif %}
+            <div class="main-content">
+                <div class="danzerpress-wrap">
+                    <div class="danzerpress-flex-row">
+                        <main class="danzerpress-two-thirds">
+                            {% block content %}{% endblock %}
+                        </main>
+                        {% if display_sidebar %}
+                            <aside class="danzerpress-one-third">
+                                {% block sidebar %}
+                                    {% include 'templates/sidebar.twig' %}
+                                {% endblock %}
+                            </aside>
+                        {% endif %}
+                    </div>
                 </div>
-                
+            </div>
             {% endblock %}
 
         {% include 'templates/footer.twig' %}

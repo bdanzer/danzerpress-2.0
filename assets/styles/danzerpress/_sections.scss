@@ -23,6 +23,8 @@
 }
 .dp-full-height {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /*Header*/
