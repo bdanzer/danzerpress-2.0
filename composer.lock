@@ -1,24 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "aab5d3837956a41265cf9ac2a2db93f5",
-    "content-hash": "606c94b41db564bd908b3ea0449f2c7d",
+    "content-hash": "28d96671b1a9df34a319868db5284388",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.23",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e"
+                "reference": "049797d727261bf27f2690430d935067710049c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/6213d900e92647831f7a406d5c530ea1f3d4360e",
-                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
+                "reference": "049797d727261bf27f2690430d935067710049c2",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +29,7 @@
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "^4.8.36"
             },
             "type": "composer-plugin",
             "extra": {
@@ -40,8 +39,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Composer\\Installers\\": "src/"
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -56,81 +55,83 @@
                 }
             ],
             "description": "A multi-framework Composer library installer",
-            "homepage": "http://composer.github.com/installers/",
+            "homepage": "https://composer.github.io/installers/",
             "keywords": [
                 "Craft",
                 "Dolibarr",
+                "Eliasis",
                 "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
                 "MODX Evo",
+                "Mautic",
+                "Maya",
                 "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
                 "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
                 "aimeos",
                 "annotatecms",
+                "attogram",
                 "bitrix",
                 "cakephp",
                 "chef",
+                "cockpit",
                 "codeigniter",
                 "concrete5",
                 "croogo",
                 "dokuwiki",
                 "drupal",
+                "eZ Platform",
                 "elgg",
+                "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
+                "itop",
                 "joomla",
                 "kohana",
                 "laravel",
+                "lavalite",
                 "lithium",
                 "magento",
+                "majima",
                 "mako",
                 "mediawiki",
                 "modulework",
+                "modx",
                 "moodle",
+                "osclass",
                 "phpbb",
                 "piwik",
                 "ppi",
                 "puppet",
+                "pxcms",
+                "reindex",
                 "roundcube",
                 "shopware",
                 "silverstripe",
+                "sydes",
                 "symfony",
                 "typo3",
                 "wordpress",
+                "yawik",
                 "zend",
                 "zikula"
             ],
-            "time": "2016-01-27 12:54:22"
-        },
-        {
-            "name": "wpackagist-plugin/timber-library",
-            "version": "0.22.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/timber-library/",
-                "reference": "tags/0.22.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/timber-library.0.22.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/timber-library/"
+            "time": "2017-12-29T09:13:20+00:00"
         },
         {
             "name": "wpackagist-plugin/show-current-template",
             "version": "0.3.0",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/show-current-template/",
+                "url": "https://plugins.svn.wordpress.org/show-current-template/",
                 "reference": "tags/0.3.0"
             },
             "dist": {
