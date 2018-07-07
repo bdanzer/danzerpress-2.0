@@ -21,6 +21,11 @@
   "require": {
     "wpackagist-plugin/show-current-template" : "*"
   },
+  "autoload": {
+      "psr-4": {
+          "Danzerpress\\Contexts\\": ["inc/contexts"]
+      }
+  },
   "repositories": [
     {
       "type": "composer",

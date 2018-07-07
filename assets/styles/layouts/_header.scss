@@ -12,96 +12,99 @@
 .drawer--navbarTopGutter {
     padding-top: 0;
 }
-.drawer-navbar {
-	background: transparent;
-    border: none;
-    transition: .5s;
-	&.drawer-navbar--fixed {
-		.drawer-container {
-		    display: flex;
-			justify-content: space-between;
-			.drawer-navbar-header {
-				background: transparent;
-				border: none;
-			}
-			.drawer-nav {
+header {
+	.drawer-navbar {
+		background: transparent;
+		border: none;
+		transition: .5s;
+		z-index: 99999;
+		&.drawer-navbar--fixed {
+			.drawer-container {
 				display: flex;
-			    flex-direction: column;
-			    align-items: center;
-				background: transparent;
-			}
-			.drawer-menu {
-				flex: 1 0 auto;
-			    display: flex;
-			    flex-direction: row;
-			    background: transparent;
-			    li {
-			    	transition: .75s;
-			    	border-width: 4px 0 0;
-				    border-color: transparent;
-				    border-style: solid;
-				    padding: 0 15px 4px;
-				    font-family: "Raleway",Helvetica,Arial,sans-serif;
-				    padding-left: 17px;
-				    padding-right: 17px;
-				    font-size: 13px;
-				    font-weight: 600;
-				    text-transform: uppercase;
-				    letter-spacing: 1px;
-				    display: flex;
-				    flex: 1 0 auto;
-					align-items: center;
-				    &:hover {
-				    	border-color: #05c4eb;
-				    	border-style: solid;
-				    }
-				    a {
-				    	color: white;
-					}
+				justify-content: space-between;
+				.drawer-navbar-header {
+					background: transparent;
+					border: none;
 				}
-				@include breakpoint(ipad_side, max-width) {
+				.drawer-nav {
+					display: flex;
 					flex-direction: column;
-					background: white;
-					width: 100%;
-					padding: 0px;
+					align-items: center;
+					background: transparent;
+				}
+				.drawer-menu {
+					flex: 1 0 auto;
+					display: flex;
+					flex-direction: row;
+					background: transparent;
 					li {
-						&:nth-child(odd) {
-							background: #f3f3f3;
-						}
+						transition: .75s;
+						border-width: 4px 0 0;
+						border-color: transparent;
+						border-style: solid;
+						padding: 0 15px 4px;
+						font-family: "Raleway",Helvetica,Arial,sans-serif;
+						padding-left: 17px;
+						padding-right: 17px;
+						font-size: 13px;
+						font-weight: 600;
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						display: flex;
+						flex: 1 0 auto;
+						align-items: center;
 						&:hover {
-							border-color: transparent;
+							border-color: #05c4eb;
+							border-style: solid;
 						}
 						a {
-							color: black;
-							padding: 20px;
-							width: 100%;
+							color: white;
+						}
+					}
+					@include breakpoint(ipad_side, max-width) {
+						flex-direction: column;
+						background: white;
+						width: 100%;
+						padding: 0px;
+						li {
+							&:nth-child(odd) {
+								background: #f3f3f3;
+							}
+							&:hover {
+								border-color: transparent;
+							}
+							a {
+								color: black;
+								padding: 20px;
+								width: 100%;
+							}
 						}
 					}
 				}
 			}
 		}
-	}
-	.dark-logo {
-		display: none;
-	}
-	&.danzerpress-trans {
-		.drawer-hamburger-icon, .drawer-hamburger-icon:after, .drawer-hamburger-icon:before {
-			background: white;
+		.dark-logo {
+			display: none;
 		}
-	}
-	&.danzerpress-non-trans {
-    	background: #fff;
-    	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.078);
-    	.light-logo {
-    		display: none;
-    	}
-    	.dark-logo {
-    		display: block;
-    	}
-		li {
-			a {
-				color: black !important;
+		&.danzerpress-trans {
+			.drawer-hamburger-icon, .drawer-hamburger-icon:after, .drawer-hamburger-icon:before {
+				background: white;
 			}
 		}
-    }
+		&.danzerpress-non-trans {
+			background: #fff;
+			box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.078);
+			.light-logo {
+				display: none;
+			}
+			.dark-logo {
+				display: block;
+			}
+			li {
+				a {
+					color: black !important;
+				}
+			}
+		}
+	}
 }

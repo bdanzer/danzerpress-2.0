@@ -27,6 +27,11 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
+//Vender autload
+$autoload_path = __DIR__ . '/vendor/autoload.php';
+if ( file_exists( $autoload_path ) ) {
+    require_once( $autoload_path );
+}
 
 if( function_exists('acf_add_options_page') ) { 
   acf_add_options_page(array(
