@@ -26,6 +26,66 @@ a {
   text-decoration: none;
 }
 
+/*Headings*/
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 35px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 25px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 15px;
+}
+
+blockquote {
+  background: #efefef;
+  padding: 20px 40px;
+  margin: 0 0 20px;
+  border-left: 4px solid #ee7a00;
+}
+
+ol, ul {
+  padding-left: 23px;
+  li {
+    padding: 10px 0;
+  }
+}
+
+/*Comments*/
+.comments-area {
+  padding: 40px 0;
+  margin-top: 20px;
+  background: $light-grey;
+  .comments-wrap {
+    max-width: 900px;
+    margin: auto;
+    textarea {
+      background: #fff;
+    }
+    input {
+      background: #fff;
+    }
+    .comment-content {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
 .menu a {
   color: #fff;
 }

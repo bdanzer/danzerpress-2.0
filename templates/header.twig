@@ -1,4 +1,4 @@
-<header class="drawer-navbar drawer-navbar--fixed" role="banner">
+<header class="drawer-navbar drawer-navbar--fixed{{ (site.hide_header) ? ' danzerpress-non-trans' : '' }}" role="banner">
     <div class="drawer-container">
       <div class="drawer-navbar-header">
         <a class="drawer-brand" href="{{ function('home_url', '/') }}">
@@ -28,9 +28,11 @@
       </nav>
     </div>
   </header>
-
-{% if not fn('is_front_page') %}
-  <div class="danzerpress-title-area parallax-window" data-parallax="scroll" data-image-src="https://unsplash.it/1920/1070/?random" style="display: flex;align-items: center;justify-content: center;">
-    <h1 class="danzerpress-title">{{ fn('get_the_title') }}</h1>
+ 
+{% if not fn('is_front_page') and not site.hide_header %}
+  <div class="danzerpress-title-area parallax-window" data-parallax="scroll" data-image-src="{{ site.get_header_thumbnail }}" style="display: flex;align-items: center;justify-content: center;">
+    <h1 class="danzerpress-title">{{ site.get_header_title }}</h1>
   </div>
+{% else %}
+  {% do site.add_body_class('hide-header') %}
 {% endif %}

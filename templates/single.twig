@@ -4,7 +4,14 @@
 
     <article {{ function('post_class') }}>
         <header>
+            <div class="danzerpress-image-wrap">
+                <img class="thumbnail" src="{{ post.thumbnail.src }}">
+            </div>
             <h1 class="entry-title">{{ post.title }}</h1>
+            <div class="entry-meta">
+                <p>Posted on: {{ post.date }}</p>
+                <p>By: {{ post.author.name|capitalize }}</p>
+            </div>
         </header>
         <div class="entry-content">
             {{ post.content }}

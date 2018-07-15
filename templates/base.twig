@@ -3,23 +3,37 @@
 
     {% include 'templates/head.twig' %}
 
-    <body class="{{ body_class }} drawer drawer--top drawer--navbarTopGutter">
+    <body class="{{ site.implode_body }} drawer drawer--top drawer--navbarTopGutter {{ (site.hide_header) ? 'hide-header' : '' }}" data-template="base.twig">
         {% include 'templates/header.twig' %}
 
             {% block body %}
             <div class="main-content">
                 <div class="danzerpress-wrap">
                     <div class="danzerpress-flex-row">
-                        <main class="danzerpress-two-thirds">
+                        <main class="danzerpress-two-thirds danzerpress-center">
                             {% block content %}{% endblock %}
                         </main>
-                        {% if display_sidebar %}
+                        {% if site.display_sidebar %}
                             <aside class="danzerpress-one-third">
                                 {% block sidebar %}
                                     {% include 'templates/sidebar.twig' %}
                                 {% endblock %}
                             </aside>
                         {% endif %}
+                    </div>
+                </div>
+                <div class="comments-area">
+                    <div class="comments-wrap">
+                        {% if post.comments|length %}
+                            <h3>Comments</h3>
+                            {% for comment in post.comments %}
+                                <div class="comment-content">
+                                    <p>{{ comment.content|striptags }}</p>
+                                    <p><strong>{{ comment.author.name|capitalize }}</strong></p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {{ post.comment_form }}
                     </div>
                 </div>
             </div>

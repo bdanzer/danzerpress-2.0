@@ -1,9 +1,17 @@
 .single {
     .main-content {
-        margin-top: 40px;
+        padding: 40px 0 0;
+        background: white;
         article {
-            background: white;
-            padding: 20px;
+            .entry-title {
+                margin: 20px 0 5px;
+            }
+            .entry-meta {
+                margin: 0 0 20px;
+                p {
+                    margin: 0;
+                }
+            }
             img {
                 width: 100%;
             }

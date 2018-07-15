@@ -77,16 +77,19 @@
         //Fix transparent menu when scrolling
         var a = $("html").offset().top;
 
-        $(document).scroll(function(){
-            if($(this).scrollTop() > a)
-            {   
-               $('header').addClass("danzerpress-non-trans").removeClass("danzerpress-trans");
-               $('.danzerpress-emergency-header').addClass("danzerpress-no-display");
-            } else {
-               $('header').removeClass("danzerpress-non-trans").addClass("danzerpress-trans");
-               $('.danzerpress-emergency-header').removeClass("danzerpress-no-display");
-            }
-        });
+        console.log($('.hide-header').length);
+        if (!$('.hide-header').length) {
+          $(document).scroll(function(){
+              if($(this).scrollTop() > a)
+              {   
+                $('header').addClass("danzerpress-non-trans").removeClass("danzerpress-trans");
+                $('.danzerpress-emergency-header').addClass("danzerpress-no-display");
+              } else {
+                $('header').removeClass("danzerpress-non-trans").addClass("danzerpress-trans");
+                $('.danzerpress-emergency-header').removeClass("danzerpress-no-display");
+              }
+          });
+        }
         
       },
       finalize: function() {
