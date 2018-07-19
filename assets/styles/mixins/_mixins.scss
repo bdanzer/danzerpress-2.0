@@ -1,6 +1,5 @@
 @mixin breakpoint($breakpoint, $width) {
     @if map-has-key($breakpoints, $breakpoint) {
-        @warn $breakpoint + ' ' + $width;
         @media screen and (#{$width}: map-get($breakpoints, $breakpoint)) {
             @content;
         }
