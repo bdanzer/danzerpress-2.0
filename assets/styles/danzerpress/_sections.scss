@@ -368,6 +368,22 @@ li.slick-active {
     margin: 0 -15px 0 !important;
 }
 
+/*Price Section*/
+.danzerpress-price-section span.price {
+    color: #ef7a03;
+    font-weight: 700;
+    font-size: 40px;
+}
+.danzerpress-price-section .danzerpress-button-modern {
+    display: block;
+    border-radius: 0;
+}
+.danzerpress-price-section .danzerpress-content-wrap {
+    padding: 20px;
+    background: white;
+    overflow: hidden;
+}
+
 /*Media Queries*/
 @media screen and (max-width: 500px) {
     .home p#danzerpress-button-1 {

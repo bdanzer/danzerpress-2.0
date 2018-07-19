@@ -1,6 +1,6 @@
 <article {{ fn('post_class', ['danzerpress-col-3', 'danzerpress-flex-column', 'wow', 'fadeIn']) }}>
     <div class="image-wrap">
-        <a href="{{ post.link }}"><img src="{{ post.thumbnail.src }}"></a>
+        <a href="{{ post.link }}"><img src="{{ post.thumbnail.src|resize(500) }}"></a>
     </div>
     <div class="danzerpress-box danzerpress-white">
         <header>

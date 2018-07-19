@@ -14,6 +14,9 @@ body,
 
 body {
   background: #efefef;
+  &.hide-header {
+    padding-top: 60px;
+  }
 }
 
 .menu {

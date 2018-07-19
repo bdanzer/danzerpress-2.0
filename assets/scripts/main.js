@@ -77,7 +77,6 @@
         //Fix transparent menu when scrolling
         var a = $("html").offset().top;
 
-        console.log($('.hide-header').length);
         if (!$('.hide-header').length) {
           $(document).scroll(function(){
               if($(this).scrollTop() > a)
