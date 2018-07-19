@@ -242,8 +242,10 @@ div.half-and-half {
 
 /*Testimonial Section*/
 .testimonial-section i.fa.fa-star {
-    margin: 0 4px;
-    color: #ffb500;
+    margin-right: 8px;
+}
+p.stars {
+    margin-bottom: 5px;
 }
 .testimonial-section img {
     height: 80px;
