@@ -14,7 +14,7 @@
                             {% block content %}{% endblock %}
                         </main>
                         {% if site.display_sidebar %}
-                            <aside class="danzerpress-one-third">
+                            <aside class="danzerpress-one-third danzerpress-sidebar">
                                 {% block sidebar %}
                                     {% include 'templates/sidebar.twig' %}
                                 {% endblock %}
@@ -22,6 +22,7 @@
                         {% endif %}
                     </div>
                 </div>
+                {% block comments %}
                 <div class="comments-area">
                     <div class="comments-wrap">
                         {% if post.comments|length %}
@@ -36,6 +37,7 @@
                         {{ post.comment_form }}
                     </div>
                 </div>
+                {% endblock %}
             </div>
             {% endblock %}
 

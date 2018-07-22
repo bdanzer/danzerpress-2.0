@@ -1,0 +1,17 @@
+aside {
+    &.danzerpress-sidebar {
+        .widget {
+            margin-bottom: 20px;
+            h3 {
+                font-size: 23px;
+                margin: 0px;
+            }
+            ul {
+                margin: 0;
+                li {
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+}
