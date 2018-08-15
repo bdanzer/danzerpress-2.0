@@ -49,6 +49,11 @@ class DanzerpressSite extends TimberSite {
     public function hide_header() 
     {
         $header = get_field('title_screen_header');
+        
+        if (is_front_page()) {
+            $header = false;
+        }
+        
         return $header;
     }
 }

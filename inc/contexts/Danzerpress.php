@@ -26,7 +26,7 @@ class Danzerpress {
 
     public static function get_ttl() 
     {
-        $cache = (get_field('cache', 'option')) ? 900 : null;
+        $cache = (get_field('cache', 'option')) ? 900 : false;
         return $cache;
     }
 }
