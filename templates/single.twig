@@ -21,19 +21,24 @@
     <div class="danzerpress-pagination">
         <div class="danzerpress-flex-row danzerpress-row-fix">
             <div class="danzerpress-prev danzerpress-col-2">
-                <a href="{{ post.prev.link }}">
-                    <div class="danzerpress-pagination-img danzerpress-prev-img">
-                        <span>PREV:<br>{{ post.prev.title }}</span>
-                        <img src="{{ post.prev.thumbnail.src }}">
-                    </div>
-                </a>
+                {% if (post.prev.link) %}
+                    <a href="{{ post.prev.link }}">
+                        <div class="danzerpress-pagination-img danzerpress-prev-img">
+                            <span>PREV:<br>{{ post.prev.title }}</span>
+                            <img src="{{ post.prev.thumbnail.src }}">
+                        </div>
+                    </a>
+                {% endif %}
             </div>
             <div class="danzerpress-next danzerpress-col-2">
-                <a href="{{ post.next.link }}">
-                    <div class="danzerpress-pagination-img danzerpress-next-img">
-                        <img src="{{ post.next.thumbnail.src }}">
-                    </div>
-                </a>
+                {% if (post.next.link) %}
+                    <a href="{{ post.next.link }}">
+                        <div class="danzerpress-pagination-img danzerpress-next-img">
+                            <span>Next:<br>{{ post.next.title }}</span>
+                            <img src="{{ post.next.thumbnail.src }}">
+                        </div>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
