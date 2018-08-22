@@ -83,6 +83,32 @@
     }
 }
 
+/**
+* Team Member Section
+*/
+.team-section {
+    .danzerpress-img-wrap, .danzerpress-content {
+        width: 50%;
+        float: left;
+    }
+    .danzerpress-content {
+        margin-left: 50%;
+        padding: 40px;
+    }
+}
+.danzerpress-img-wrap {
+    padding-top: 12%;
+    img {
+        position: absolute;
+        bottom: -55px;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        box-shadow: 1px 1px 15px rgba(0,0,0,.18);
+    }
+}
+
 /*half and half section*/
 div.half-and-half {
     background: transparent;
@@ -191,55 +217,6 @@ div.half-and-half {
 }
 
 
-/*Post section*/
-.recent_post_section h2 {
-    line-height: 1.5;
-    margin-top: 0px;
-}
-.danzerpress-recent-post-section img,
-.danzerpress-team-member-section img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-.danzerpress-col-1-fix.danzerpress-zero.danzerpress-recent-post-section img {
-    height: 200px;
-}
-.danzerpress-col-1-fix.danzerpress-zero.danzerpress-recent-post-section img:hover {
-    transform: scale(1.2);
-    transition: 1s;
-}
-.danzerpress-recent-post-section img {
-    max-height: 200px;
-}
-.recent_post_section a.danzerpress-button-modern {
-    padding: 0;
-    background: none;
-    border: none;
-    color: #06c4ec;
-    text-transform: capitalize;
-    font-weight: normal;
-    display: inline-block;
-    width: auto;
-}
-
-@media screen and (max-width: 1024px) {
-    img.split-section-image {
-        max-height: 200px;
-    }
-}
-@media screen and (max-width: 768px) {
-    img.split-section-image {
-        max-height: 150px;
-    }
-}
-@media screen and (max-width: 500px) {
-    img.split-section-image {
-        max-height: 100%;
-    }
-}
-
-
 /*Testimonial Section*/
 .testimonial-section i.fa.fa-star {
     margin-right: 8px;
@@ -252,66 +229,6 @@ div.half-and-half {
     width: 80px;
     border-radius: 100%;
     object-fit: cover;
-}
-
-
-/*Slider Revolution*/
-div.slider-revolution-section {
-    padding: 0px;
-}
-.slider-revolution-section .danzerpress-wrap {
-    width: 100%;
-}
-.rev_slider iframe {
-    border: none;
-}
-
-
-/*Faq Section*/
-/* Style the buttons that are used to open and close the danzerpress-accordion panel */
-.danzerpress-accordion {
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-.accordian h4 {
-    margin: 0px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .danzerpress-accordion:hover {
-    background-color: #ccc;
-}
-
-/* Style the danzerpress-accordion panel. Note: hidden by default */
-.danzerpress-panel {
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    margin-bottom: 20px;
-}
-.danzerpress-accordion:after {
-    content: '\02795';
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
-.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 
