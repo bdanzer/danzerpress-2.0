@@ -113,6 +113,9 @@
 div.half-and-half {
     background: transparent;
     padding: 0px;
+    .danzerpress-title {
+        margin-top: 0px;
+    }
     .danzerpress-wrap, .danzerpress-flex-row {
         height: 100%;
     }
