@@ -33,6 +33,16 @@ class DanzerpressSite extends TimberSite {
         }
     }
 
+    public function get_theme_color() 
+    {
+        $color = get_field('theme_color', 'options');
+        
+        if (!empty($color)) {
+            return $color;
+        }
+        return false;
+    }
+
     public function get_header_thumbnail()
     {
         if (get_the_post_thumbnail_url()) {

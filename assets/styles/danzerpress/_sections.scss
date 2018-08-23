@@ -149,6 +149,9 @@ div.half-and-half {
 
 /*Icon Section*/
 .icon-wrap {
+    .danzerpress-box {
+        overflow: hidden;
+    }
     a:hover {
         box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.10196078431372549);
         transition: .5s;

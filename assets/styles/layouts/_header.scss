@@ -18,6 +18,24 @@
 	border: none;
 	transition: .5s;
 	z-index: 9999;
+	li.menu-item {
+		&:hover > ul {
+			display: block;
+		}
+		.drawer-dropdown-menu {
+			top: 60px;
+			left: 160px;
+			li {
+				&:hover {
+					border-color: transparent !important;
+				}
+				a.drawer-dropdown-menu-item {
+					color: black;
+					text-decoration: none;
+				}
+			}
+		}
+	}
 	&.drawer-navbar--fixed {
 		.drawer-container {
 			display: flex;

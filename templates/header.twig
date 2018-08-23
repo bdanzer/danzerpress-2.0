@@ -19,6 +19,13 @@
                         <ul class="drawer-dropdown-menu">
                             {% for child in item.get_children %}
                                 <li><a class="drawer-dropdown-menu-item" href="{{child.get_link}}">{{child.title}}</a></li>
+                                {% if child.get_children %}
+                                  <ul class="level-3-submenu">
+                                    {% for child_3 in child.get_children %}
+										<li><a class="drawer-dropdown-menu-item" href="{{child_3.get_link}}">{{child_3.title}}</a></li>
+                                    {% endfor %}
+                                  </ul>
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     {% endif %}
@@ -28,6 +35,10 @@
       </nav>
     </div>
   </header>
+
+{% if site.get_theme_color %}
+	{% include 'templates/colors/change_colors.twig' %}
+{% endif %}
  
 {% if not fn('is_front_page') and not site.hide_header %}
   <div class="danzerpress-title-area parallax-window" data-parallax="scroll" data-image-src="{{ site.get_header_thumbnail }}" style="display: flex;align-items: center;justify-content: center;">
