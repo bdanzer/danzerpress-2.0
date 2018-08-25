@@ -52,9 +52,7 @@ function asset_path($filename) {
 
   $file_exists = file_exists(get_template_directory_uri() . '/dist/styles/' . $file);
 
-  //wp_die(var_dump($file_exists));
-
-  if (array_key_exists($file, $manifest->get()) && !IS_DEV || $file_exists === false) {
+  if (array_key_exists($file, $manifest->get()) && (!IS_DEV || $file_exists === false)) {
     return $dist_path . $directory . $manifest->get()[$file];
   } else {
     return $dist_path . $directory . $file;

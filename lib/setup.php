@@ -101,6 +101,16 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
+  // Animate.css
+  wp_enqueue_style('animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+  // Font Awesome
+  wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/3be2183bb5.js', array(), null, true );
+  // Google Fonts
+  wp_enqueue_style( 'google fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Raleway:400,500,700,800|Roboto', false);
+  // Google Map
+  wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAFVrEjgketoyNgnya0FkoS3vIIl3_aeNg');
+
+  // Sage JS
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
