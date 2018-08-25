@@ -4,9 +4,11 @@
 
     <article {{ function('post_class') }}>
         <header>
-            <div class="danzerpress-image-wrap">
-                <img class="thumbnail" src="{{ post.thumbnail.src }}">
-            </div>
+            {% if post.get_field('hide_featured_image') == false %}
+                <div class="danzerpress-image-wrap">
+                    <img class="thumbnail" src="{{ post.thumbnail.src }}">
+                </div>
+            {% endif %}
             <h1 class="entry-title">{{ post.title }}</h1>
             <div class="entry-meta">
                 <p>Posted on: {{ post.date }}</p>
