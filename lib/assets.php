@@ -50,9 +50,7 @@ function asset_path($filename) {
     $manifest = new JsonManifest($manifest_path);
   }
 
-  $file_exists = file_exists(get_template_directory_uri() . '/dist/styles/' . $file);
-  
-  if (array_key_exists($file, $manifest->get()) && !IS_DEV && $file_exists === false) {
+  if (array_key_exists($file, $manifest->get())) {
     return $dist_path . $directory . $manifest->get()[$file];
   } else {
     return $dist_path . $directory . $file;
