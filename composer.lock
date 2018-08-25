@@ -4,8 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28d96671b1a9df34a319868db5284388",
+    "content-hash": "d0f3af90caeea1e7f1f3beac999fa8fd",
     "packages": [
+        {
+            "name": "bdanzer/danzerpress-2.0-child",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:bdanzer/wp-child-theme.git",
+                "reference": "93bba70e7e0b19d4f69a1c48ecb49049f318504f"
+            },
+            "type": "library",
+            "authors": [
+                {
+                    "name": "bdanzer",
+                    "email": "britt.danzer@gmail.com"
+                }
+            ],
+            "description": "WordPress child theme for danzerpress2.0 theme",
+            "time": "2018-08-25T03:34:44+00:00"
+        },
         {
             "name": "composer/installers",
             "version": "v1.5.0",
@@ -150,7 +168,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "bdanzer/danzerpress-2.0-child": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
