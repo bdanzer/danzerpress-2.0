@@ -10,4 +10,3 @@ if (jQuery) {
         });
     });
 }
-alert('fuck you');
