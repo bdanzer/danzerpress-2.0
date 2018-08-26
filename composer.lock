@@ -12,9 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:bdanzer/wp-child-theme.git",
-                "reference": "93bba70e7e0b19d4f69a1c48ecb49049f318504f"
+                "reference": "d248d437f5852c03cc9febe10a452ebbb4ee9ca7"
             },
-            "type": "library",
+            "type": "wordpress-theme",
+            "autoload": {
+                "psr-4": {
+                    "DanzerpressChild\\": [
+                        "inc"
+                    ]
+                }
+            },
             "authors": [
                 {
                     "name": "bdanzer",
@@ -22,7 +29,7 @@
                 }
             ],
             "description": "WordPress child theme for danzerpress2.0 theme",
-            "time": "2018-08-25T03:34:44+00:00"
+            "time": "2018-08-26T02:02:40+00:00"
         },
         {
             "name": "composer/installers",
