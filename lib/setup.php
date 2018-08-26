@@ -3,6 +3,7 @@
 namespace Roots\Sage\Setup;
 
 use Roots\Sage\Assets;
+use Timber;
 
 /**
  * Theme setup
@@ -90,6 +91,11 @@ function display_sidebar() {
 
   return apply_filters('sage/display_sidebar', $display);
 }
+
+/**
+ * Timber Locations
+ */
+\Timber::$dirname = 'resources';
 
 /**
  * Theme assets
