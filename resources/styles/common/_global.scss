@@ -14,9 +14,20 @@ body,
 
 body {
   background: #efefef;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  &.admin-bar {
+    min-height: calc(100vh - 32px);
+  }
   &.hide-header {
     padding-top: 60px;
   }
+}
+
+.danzerpress-main-content {
+  flex-grow: 1;
 }
 
 .menu {

@@ -1,4 +1,7 @@
 <?php
-$context = Timber::get_context();
+use Danzerpress\Contexts\Danzerpress;
 
-Timber::render('templates/page.twig', $context);
+$context = Danzerpress::get_context();
+$context['posts'] = Timber::get_posts();
+
+Timber::render('templates/page.twig', $context, Danzerpress::get_ttl());

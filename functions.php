@@ -55,9 +55,41 @@ if( function_exists('acf_add_options_page') ) {
   ));
 }
 
-
 function my_acf_init() {
 	acf_update_setting('google_api_key', 'AIzaSyAFVrEjgketoyNgnya0FkoS3vIIl3_aeNg');
 }
 
 add_action('acf/init', 'my_acf_init');
+
+/**
+ * Include aal if in admin
+ */
+if (is_admin()) {
+  require_once get_template_directory() . '/inc/aal/aryo-activity-log.php';
+  AAL_Main::instance();
+
+  if (get_current_user_id() <= 2) {
+    require_once get_template_directory() . '/inc/aal/classes/class-aal-admin-ui.php';
+    $aal_ui = new AAL_Admin_Ui;
+    add_action( 'admin_menu', array( $aal_ui, 'create_admin_menu' ), 20 );
+  } else {
+    if ($_GET['page'] === 'activity-log-settings') {
+      wp_die('You do not have access');
+    }
+  }
+  
+  add_filter('dp_insert_aal', function($continue) {
+    if (IS_DEV) {
+      $continue = false;
+    }
+    return $continue;
+  }, 10, 1);
+
+  function activate_aal() {
+    if (empty(get_option('activity_log_db_version'))) {
+      require_once get_template_directory() . '/inc/aal/classes/class-aal-maintenance.php';
+      AAL_Maintenance::activate(false);
+    }
+  }
+  add_action( 'after_setup_theme', 'activate_aal' );
+}
