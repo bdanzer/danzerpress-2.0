@@ -66,4 +66,10 @@ class DanzerpressSite extends TimberSite {
         
         return $header;
     }
+
+    public function hide_nav() 
+    {
+        $header = get_field('hide_nav');
+        return $header;
+    }
 }

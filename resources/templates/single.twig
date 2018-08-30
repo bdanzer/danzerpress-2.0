@@ -6,7 +6,7 @@
         <header>
             {% if post.get_field('hide_featured_image') == false %}
                 <div class="danzerpress-image-wrap">
-                    <img class="thumbnail" src="{{ post.thumbnail.src }}">
+                    <img alt="Image for {{ post.title }}" class="thumbnail" src="{{ post.thumbnail.src }}">
                 </div>
             {% endif %}
             <h1 class="entry-title">{{ post.title }}</h1>
@@ -27,7 +27,7 @@
                     <a href="{{ post.prev.link }}">
                         <div class="danzerpress-pagination-img danzerpress-prev-img">
                             <span>PREV:<br>{{ post.prev.title }}</span>
-                            <img src="{{ post.prev.thumbnail.src }}">
+                            <img alt="Image for {{ post.prev.title }}" src="{{ post.prev.thumbnail.src }}">
                         </div>
                     </a>
                 {% endif %}
@@ -37,7 +37,7 @@
                     <a href="{{ post.next.link }}">
                         <div class="danzerpress-pagination-img danzerpress-next-img">
                             <span>Next:<br>{{ post.next.title }}</span>
-                            <img src="{{ post.next.thumbnail.src }}">
+                            <img alt="Image for {{ post.next.title }}" src="{{ post.next.thumbnail.src }}">
                         </div>
                     </a>
                 {% endif %}
