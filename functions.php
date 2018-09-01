@@ -55,12 +55,6 @@ if( function_exists('acf_add_options_page') ) {
   ));
 }
 
-function my_acf_init() {
-	acf_update_setting('google_api_key', 'AIzaSyAFVrEjgketoyNgnya0FkoS3vIIl3_aeNg');
-}
-
-add_action('acf/init', 'my_acf_init');
-
 /**
  * Include aal if in admin
  */
