@@ -1,4 +1,5 @@
 <?php
-$context = Timber::get_context();
+use Danzerpress\Controller\Controller;
 
-Timber::render('templates/404.twig', $context);
+$_404 = new Controller('templates/404.twig');
+$_404->render();

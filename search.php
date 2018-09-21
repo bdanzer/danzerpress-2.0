@@ -1,4 +1,5 @@
 <?php
-$context = Timber::get_context();
+use Danzerpress\Controller\Controller;
 
-Timber::render('templates/search.twig', $context);
+$_search = new Controller('templates/search.twig');
+$_search->render();

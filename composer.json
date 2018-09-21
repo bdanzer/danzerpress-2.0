@@ -23,7 +23,10 @@
   },
   "autoload": {
       "psr-4": {
-          "Danzerpress\\Contexts\\": ["inc/contexts"]
+          "Danzerpress\\Contexts\\": ["inc/contexts"],
+          "Danzerpress\\Controller\\": ["inc/controller"],
+          "Danzerpress\\Image\\": ["inc/image"]
+
       }
   },
   "repositories": [

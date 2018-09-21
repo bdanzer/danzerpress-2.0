@@ -1,8 +1,5 @@
 <?php
-use Danzerpress\Contexts\Danzerpress;
-use Danzerpress\AcfContextHelper;
+use Danzerpress\Controller\Controller;
 
-$context = Danzerpress::get_context();
-$context['posts'] = Timber::get_posts();
-
-Timber::render('templates/page.twig', $context, Danzerpress::get_ttl());
+$_page = new Controller('templates/page.twig');
+$_page->render();

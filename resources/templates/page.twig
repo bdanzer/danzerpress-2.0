@@ -1,13 +1,7 @@
 {% extends "templates/base.twig" %}
 
 {% block body %}
-	<div class="">
-		<div class="danzerpress-two-thirds danzerpress-col-center">
-			<div class="">
-			    {% for post in posts %}
-			        {{ post.content }}
-			    {% endfor %}
-			</div>
-		</div>
+	<div class="danzerpress-two-thirds danzerpress-col-center">
+		{{post.content}}
 	</div>
 {% endblock %}
