@@ -1,5 +1,4 @@
 <?php
-
 namespace Danzerpress\Controller;
 
 use Danzerpress\Contexts\Danzerpress;
