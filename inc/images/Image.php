@@ -1,21 +1,23 @@
 <?php
-namespace Danzerpress\Image;
+namespace Danzerpress\Images;
 
-class Image {
+use Timber\Image as TimberImage;
+
+class Image extends TimberImage {
     public function __construct($image) 
     {
-        $this->build_image($image);
+        parent::__construct($image);
     }
 
-    public function build_image($image) 
+    public function build_image() 
     {
         $image = [
-            'src' => wp_get_attachment_url($image),
-            'alt' => get_post_meta($image, '_wp_attachment_image_alt', true)
+            'src' => $this->src(),
+            'alt' => $this->alt()
         ];
 
         $image_src = ($image['src']) ? $image['src'] : 'https://picsum.photos/1920/1080';
-        $image_alt = $image['alt'];
+        $image_alt = ($image['alt']) ? $image['alt'] : 'Image';
 
         $src = "src='$image_src'";
         $alt = "alt='$image_alt'";

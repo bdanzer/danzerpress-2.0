@@ -87,3 +87,15 @@ if (is_admin()) {
   }
   add_action( 'after_setup_theme', 'activate_aal' );
 }
+
+new Danzerpress\Twig\TwigFunctions;
+
+// add_filter( 'timber/twig', function( \Twig_Environment $twig ) {
+//   $twig->addFunction( new Timber\Twig_Function( 'dpImage', 'dpImage' ) );
+//   return $twig;
+// } );
+
+// function dpImage($image_id) {
+//   $image = new Danzerpress\Images\Image($image_id);
+//   return $image->build_image();
+// }

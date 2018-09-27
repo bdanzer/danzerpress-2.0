@@ -25,7 +25,8 @@
       "psr-4": {
           "Danzerpress\\Contexts\\": ["inc/contexts"],
           "Danzerpress\\Controller\\": ["inc/controller"],
-          "Danzerpress\\Image\\": ["inc/images"]
+          "Danzerpress\\Images\\": ["inc/images"],
+          "Danzerpress\\Twig\\": ["inc/twig"]
 
       }
   },
