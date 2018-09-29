@@ -63,7 +63,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "#05c4eb"
         },
         {
             "key": "field_59ffd8f3324ec",
@@ -154,9 +154,9 @@
             "default_value": ""
         },
         {
-            "key": "field_5b3028046f7a6",
-            "label": "test section",
-            "name": "test_section",
+            "key": "field_5b89c89918c3e",
+            "label": "Google Map Api",
+            "name": "google_map_api",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -173,10 +173,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b303413fdf52",
-            "label": "Another section",
-            "name": "another_section",
-            "type": "text",
+            "key": "field_5b304685ad52f",
+            "label": "cache",
+            "name": "cache",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -185,49 +185,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5b3036f4cc08f",
-            "label": "Tototally New",
-            "name": "tototally_new",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5b304792a41ce",
-            "label": "new something",
-            "name": "new_something",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -247,5 +209,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529890717
+    "modified": 1538256447
 }

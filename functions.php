@@ -89,13 +89,4 @@ if (is_admin()) {
 }
 
 new Danzerpress\Twig\TwigFunctions;
-
-// add_filter( 'timber/twig', function( \Twig_Environment $twig ) {
-//   $twig->addFunction( new Timber\Twig_Function( 'dpImage', 'dpImage' ) );
-//   return $twig;
-// } );
-
-// function dpImage($image_id) {
-//   $image = new Danzerpress\Images\Image($image_id);
-//   return $image->build_image();
-// }
+new Danzerpress\Twig\TwigLoading;

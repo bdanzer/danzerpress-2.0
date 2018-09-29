@@ -3,10 +3,10 @@
     "title": "Page Options",
     "fields": [
         {
-            "key": "field_5a5ec94ec87f3",
-            "label": "Title Screen Header",
-            "name": "title_screen_header",
-            "type": "radio",
+            "key": "field_5b8750454ac55",
+            "label": "Hide Nav",
+            "name": "hide_nav",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,16 +15,68 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "1": "Yes",
-                "2": "No"
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a5ec94ec87f3",
+            "label": "Hide Screen Header",
+            "name": "title_screen_header",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
             },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value"
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b49499e7e415",
+            "label": "Sidebar",
+            "name": "sidebar",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b80bd5dd8173",
+            "label": "Hide Featured Image",
+            "name": "hide_featured_image",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -61,5 +113,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529819253
+    "modified": 1538256454
 }

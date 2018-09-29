@@ -1,10 +1,19 @@
 <?php
 namespace Danzerpress\Twig;
 
+use Timber;
+
 Class TwigLoading {
+    protected $plugin_url;
 
     public function __construct() 
     {
+        if (true === IS_DEV) {
+            $this->plugin_url = WP_PLUGIN_DIR . '/danzerpress-plugin/resources/templates';
+        } else {
+            $this->plugin_url = WP_PLUGIN_DIR . '/dp-plugin/resources/templates';
+        }
+
         add_action('init', function() {
             $this->timber_dir();
             $this->timber_locations();
@@ -13,22 +22,15 @@ Class TwigLoading {
   
     public function timber_dir() 
     {
-        \Timber::$dirname = 'resources';
+        Timber::$dirname = 'resources';
     }
   
     public function timber_locations() 
     {
-        if (true === IS_DEV) {
-            $plugin_url = plugins_url() . '/danzerpress-plugin/';
-        } else {
-            $plugin_url = plugins_url() . '/dp-plugin/';
-        }
-
-        \Timber::$locations = [
-            $this->plugin_url . '/resources', 
-            $this->plugin_url . '/resources/templates',
-            get_stylesheet_directory().'/resources',
-            get_template_directory().'/resources'
+        Timber::$locations = [
+            $this->plugin_url,
+            get_template_directory().'/resources',
+            get_stylesheet_directory().'/resources'
         ];
     }
 }
