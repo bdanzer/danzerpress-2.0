@@ -24,15 +24,6 @@ class DanzerpressSite extends TimberSite {
         return implode(' ', $this->body_class);
     }
 
-    public function get_header_title() 
-    {
-        if (is_home()) {
-            return 'News';
-        } else {
-            return get_the_title();
-        }
-    }
-
     public function get_theme_color() 
     {
         $color = get_field('theme_color', 'options');
@@ -41,35 +32,5 @@ class DanzerpressSite extends TimberSite {
             return $color;
         }
         return false;
-    }
-
-    public function get_header_thumbnail()
-    {
-        if (get_the_post_thumbnail_url()) {
-            return get_the_post_thumbnail_url();
-        }
-    }
-
-    public function display_sidebar() 
-    {
-        $sidebar_option = get_field('sidebar');
-        return $sidebar_option;
-    }
-
-    public function hide_header() 
-    {
-        $header = get_field('title_screen_header');
-        
-        if (is_front_page()) {
-            $header = false;
-        }
-        
-        return $header;
-    }
-
-    public function hide_nav() 
-    {
-        $header = get_field('hide_nav');
-        return $header;
     }
 }

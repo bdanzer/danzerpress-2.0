@@ -4,25 +4,31 @@ namespace Danzerpress\Images;
 use Timber\Image as TimberImage;
 
 class Image extends TimberImage {
-    public function __construct($image) 
+    protected $classes;
+
+    public function __construct($image, $classes = null) 
     {
         parent::__construct($image);
+        $this->classes = $classes;
     }
 
     public function build_image() 
     {
         $image = [
             'src' => $this->src(),
-            'alt' => $this->alt()
+            'alt' => $this->alt(),
+            'class' => $this->classes
         ];
 
         $image_src = ($image['src']) ? $image['src'] : 'https://picsum.photos/1920/1080';
         $image_alt = ($image['alt']) ? $image['alt'] : 'Image';
+        $image_class = ($image['class']) ? $image['class'] : '';
 
+        $class = "class='$image_class' ";
         $src = "src='$image_src'";
         $alt = "alt='$image_alt'";
 
-        $html = '<img ' . $alt . ' ' . $src . '/>';
+        $html = '<img ' . $class . $alt . ' ' . $src . '/>';
 
         return $html;
     }

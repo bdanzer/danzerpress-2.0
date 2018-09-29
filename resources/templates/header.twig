@@ -1,5 +1,5 @@
-{% if not site.hide_nav %}
-  <header class="drawer-navbar drawer-navbar--fixed{{ (site.hide_header and not site.hide_nav) ? ' danzerpress-non-trans' : '' }}" role="banner">
+{% if not post.hide_nav %}
+  <header class="drawer-navbar drawer-navbar--fixed{{ (post.hide_header and not post.hide_nav) ? ' danzerpress-non-trans' : '' }}" role="banner">
     <div class="drawer-container">
       <div class="drawer-navbar-header">
         <a class="drawer-brand" href="{{ function('home_url', '/') }}">
@@ -42,8 +42,9 @@
 	{% include 'templates/colors/change_colors.twig' %}
 {% endif %}
  
-
+{% if false == post.hide_header %}
   <div class="danzerpress-title-area danzerpress-flex-column danzerpress-align-content danzerpress-justify-content">
-    <img alt="Image for {{ post.title }}" class="danzerpress-parallax" src="{{site.get_header_thumbnail}}"/>
-    <h1 class="danzerpress-title">{{ site.get_header_title }}</h1>
+    {{dpImage(post.get_header_thumbnail, 'danzerpress-parallax')}}
+    <h1 class="danzerpress-title">{{ post.get_header_title }}</h1>
   </div>
+{% endif %}

@@ -16,7 +16,7 @@ class Controller {
         }
 
         $this->context = Danzerpress::get_context();
-        $this->context['post'] = Timber::get_post(get_the_ID(), new DanzerpressPostContext());
+        $this->context['post'] = Timber::get_post(get_the_ID(), DanzerpressPostContext::class);
         $this->context['sidebar_primary'] = Timber::get_widgets('sidebar-primary');
     }
 

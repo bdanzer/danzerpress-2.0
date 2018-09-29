@@ -28,9 +28,9 @@ Class TwigLoading {
     public function timber_locations() 
     {
         Timber::$locations = [
-            $this->plugin_url,
-            get_template_directory().'/resources',
-            get_stylesheet_directory().'/resources'
+            get_stylesheet_directory().'/resources/templates',
+            get_template_directory().'/resources/templates',
+            $this->plugin_url
         ];
     }
 }
