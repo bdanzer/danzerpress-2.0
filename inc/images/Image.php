@@ -20,7 +20,8 @@ class Image extends TimberImage {
             'class' => $this->classes
         ];
 
-        $image_src = ($image['src']) ? $image['src'] : 'https://picsum.photos/1920/1080';
+        $int = random_int(10, 99);
+        $image_src = ($image['src']) ? $image['src'] : 'https://picsum.photos/1920/10' . $int . '/?random';
         $image_alt = ($image['alt']) ? $image['alt'] : 'Image';
         $image_class = ($image['class']) ? $image['class'] : '';
 

@@ -26,7 +26,7 @@ class InfiniteScroll {
     getPosts(obj) {
         this.notLoading = false;
         var $ = jQuery;
-        var $wpURL="https://dev1.danzerpress.com/wp-json/wp/v2/posts?";
+        var $wpURL="/wp-json/wp/v2/posts?";
     
         $wpURL = $wpURL + "per_page="+ this.perPage +"&page="+ this.page;
     
