@@ -25,9 +25,10 @@
       "psr-4": {
           "Danzerpress\\Contexts\\": ["inc/contexts"],
           "Danzerpress\\Controller\\": ["inc/controller"],
+          "Danzerpress\\Chunks\\": ["inc/chunks"],
           "Danzerpress\\Images\\": ["inc/images"],
-          "Danzerpress\\Twig\\": ["inc/twig"]
-
+          "Danzerpress\\Twig\\": ["inc/twig"],
+          "Danzerpress\\Rest\\": ["inc/rest"]
       }
   },
   "repositories": [

@@ -1,0 +1,8 @@
+<div id="infinite-row" class="danzerpress-flex-row" data-post-per="{{posts_per_page}}" data-page="{{post_page}}">
+    {% for post in posts %}
+        {% include 'content.twig' with {columns: columns} %}
+    {% endfor %}
+</div>
+<div class="danzerpress-text-align-center">
+    <div id="spinner" class="lds-ring danzerpress-no-display"><div></div><div></div><div></div><div></div></div>
+</div>

@@ -33,4 +33,43 @@ class DanzerpressSite extends TimberSite {
         }
         return false;
     }
+
+    public function get_header_title() 
+    {
+        if (is_home() && !is_front_page()) {
+            return 'News';
+        } elseif (is_front_page()) {
+            return 'Front';
+        } elseif (is_404()) {
+            return '404';
+        } elseif (is_search()) {
+            return 'Search';
+        } else {
+            return get_the_title();
+        }
+    }
+
+    public function hide_header() 
+    {
+        $header = get_field('title_screen_header');
+        
+        if (is_front_page()) {
+            $header = true;
+        }
+        
+        return $header;
+    }
+
+    public function header_hook() {
+
+        $filter = apply_filters('danzerpress_menu_content', null);
+        
+        $html = '<li>';
+        $html .= $filter;
+        $html .= '</li>';
+
+        $html = apply_filters('danzerpress_menu_html', $html);
+
+        return $html;
+    }
 }

@@ -1,22 +1,23 @@
 {% extends "templates/base.twig" %}
 
-{% block content %}
+{% block body %}
+<div class="archive">
+    <div class="danzerpress-featured-content main-content">
+        <div class="danzerpress-wrap">
+            <div class="danzerpress-one-third danzerpress-col-center">
+            {{ function('get_search_form') }}
+            </div>
 
-    <div class="page-header">
-        <h1>{{ post.title }}</h1>
+            {% if not posts|length %}
+                {{ __('Sorry, no results were found.', 'sage') }}
+            {% else %}
+                <div class="danzerpress-flex-row">
+                    {% for post in posts %}
+                        {% include "templates/content.twig" with {post: post, columns: 3}  %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
     </div>
-
-    {% if posts.post_count == 0 %}
-        {{ __('Sorry, no results were found.', 'sage') }}
-        {{ function('get_search_form') }}
-    {% endif %}
-
-    {% for post in posts %}
-
-        {% include "templates/content.twig" with {post: post}  %}
-
-    {% endfor %}
-
-    {{ function('the_posts_navigation') }}
-
+</div>
 {% endblock %}

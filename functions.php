@@ -90,3 +90,4 @@ if (is_admin()) {
 
 new Danzerpress\Twig\TwigFunctions;
 new Danzerpress\Twig\TwigLoading;
+new Danzerpress\Rest\RestApi;

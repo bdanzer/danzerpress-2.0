@@ -24,9 +24,9 @@ class Image extends TimberImage {
         $image_alt = ($image['alt']) ? $image['alt'] : 'Image';
         $image_class = ($image['class']) ? $image['class'] : '';
 
-        $class = "class='$image_class' ";
-        $src = "src='$image_src'";
-        $alt = "alt='$image_alt'";
+        $class = 'class="' . $image_class . '" ';
+        $src = 'src="' . $image_src . '"';
+        $alt = 'alt="' . $image_alt . '"';
 
         $html = '<img ' . $class . $alt . ' ' . $src . '/>';
 

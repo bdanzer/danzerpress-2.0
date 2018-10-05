@@ -22,29 +22,9 @@ class DanzerpressPostContext extends TimberPost {
         return $sidebar_option;
     }
 
-    public function hide_header() 
-    {
-        $header = get_field('title_screen_header');
-        
-        if (is_front_page()) {
-            $header = false;
-        }
-        
-        return $header;
-    }
-
     public function hide_nav() 
     {
         $header = get_field('hide_nav');
         return $header;
-    }
-
-    public function get_header_title() 
-    {
-        if (is_home()) {
-            return 'News';
-        } else {
-            return 'ello';
-        }
     }
 }

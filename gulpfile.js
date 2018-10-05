@@ -18,6 +18,7 @@ var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
+var babel        = require('gulp-babel');
 
 // See https://github.com/austinpray/asset-builder
 var setPath = 'resources';
@@ -257,6 +258,17 @@ gulp.task('build', function(callback) {
               ['fonts', 'images'],
               callback);
 });
+
+gulp.task('babel', () =>
+    gulp.src(path.source + 'project/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(concat('main.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(path.dist + 'scripts'))
+);
 
 // ### Wiredep
 // `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See
