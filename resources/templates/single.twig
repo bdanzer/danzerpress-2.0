@@ -1,48 +1,48 @@
 {% extends "templates/base.twig" %}
 
 {% block content %}
-
-    <article {{ function('post_class') }}>
-        <header>
-            {% if post.get_field('hide_featured_image') == false %}
-                <div class="danzerpress-image-wrap">
-                    {{dpImage(post.thumbnail.id)}}
+    <div class="danzerpress-two-thirds danzerpress-col-center">
+        <article {{ function('post_class') }}>
+            <header>
+                {% if post.get_field('hide_featured_image') == false %}
+                    <div class="danzerpress-image-wrap">
+                        {{dpImage(post.thumbnail.id)}}
+                    </div>
+                {% endif %}
+                <h1 class="entry-title">{{ post.title }}</h1>
+                <div class="entry-meta">
+                    <p>Posted on: {{ post.date }}</p>
+                    <p>By: {{ post.author.name|capitalize }}</p>
                 </div>
-            {% endif %}
-            <h1 class="entry-title">{{ post.title }}</h1>
-            <div class="entry-meta">
-                <p>Posted on: {{ post.date }}</p>
-                <p>By: {{ post.author.name|capitalize }}</p>
+            </header>
+            <div class="entry-content">
+                {{ post.content }}
             </div>
-        </header>
-        <div class="entry-content">
-            {{ post.content }}
-        </div>
-    </article>
+        </article>
 
-    <div class="danzerpress-pagination">
-        <div class="danzerpress-flex-row danzerpress-row-fix">
-            <div class="danzerpress-prev danzerpress-col-2">
-                {% if (post.prev.link) %}
-                    <a href="{{ post.prev.link }}">
-                        <div class="danzerpress-pagination-img danzerpress-prev-img">
-                            <span>PREV:<br>{{ post.prev.title }}</span>
-                            {{dpImage(post.prev.thumbnail.src)}}
-                        </div>
-                    </a>
-                {% endif %}
-            </div>
-            <div class="danzerpress-next danzerpress-col-2">
-                {% if (post.next.link) %}
-                    <a href="{{ post.next.link }}">
-                        <div class="danzerpress-pagination-img danzerpress-next-img">
-                            <span>Next:<br>{{ post.next.title }}</span>
-                            {{dpImage(post.next.thumbnail.id)}}
-                        </div>
-                    </a>
-                {% endif %}
+        <div class="danzerpress-pagination">
+            <div class="danzerpress-flex-row danzerpress-row-fix">
+                <div class="danzerpress-prev danzerpress-col-2">
+                    {% if (post.prev.link) %}
+                        <a href="{{ post.prev.link }}">
+                            <div class="danzerpress-pagination-img danzerpress-prev-img">
+                                <span>PREV:<br>{{ post.prev.title }}</span>
+                                {{dpImage(post.prev.thumbnail.src)}}
+                            </div>
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="danzerpress-next danzerpress-col-2">
+                    {% if (post.next.link) %}
+                        <a href="{{ post.next.link }}">
+                            <div class="danzerpress-pagination-img danzerpress-next-img">
+                                <span>Next:<br>{{ post.next.title }}</span>
+                                {{dpImage(post.next.thumbnail.id)}}
+                            </div>
+                        </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-
 {% endblock %}
