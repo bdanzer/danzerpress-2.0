@@ -24,11 +24,12 @@
   "autoload": {
       "psr-4": {
           "Danzerpress\\Contexts\\": ["inc/contexts"],
-          "Danzerpress\\Controller\\": ["inc/controller"],
+          "Danzerpress\\Controllers\\": ["inc/controllers"],
           "Danzerpress\\Chunks\\": ["inc/chunks"],
           "Danzerpress\\Images\\": ["inc/images"],
           "Danzerpress\\Twig\\": ["inc/twig"],
-          "Danzerpress\\Rest\\": ["inc/rest"]
+          "Danzerpress\\Rest\\": ["inc/rest"],
+          "Danzerpress\\Ajax\\": ["inc/ajax"]
       }
   },
   "repositories": [

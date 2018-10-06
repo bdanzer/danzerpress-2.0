@@ -1,5 +1,5 @@
 <?php
-namespace Danzerpress\Controller;
+namespace Danzerpress\Controllers;
 
 use Danzerpress\Contexts\Danzerpress;
 use Danzerpress\Contexts\DanzerpressPostContext;

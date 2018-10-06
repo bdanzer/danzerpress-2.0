@@ -4,9 +4,9 @@
     "fields": [
         {
             "key": "field_59ff6d9b94755",
-            "label": "Navigation Style",
+            "label": "Transparent Menu",
             "name": "navigation_style",
-            "type": "select",
+            "type": "true_false",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -15,17 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "transparent": "Transparent Menu",
-                "non_transparent": "Non-Transparent Menu"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5a5d9df06c0ab",
@@ -75,5 +69,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538256461
+    "modified": 1538803794
 }

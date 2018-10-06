@@ -1,5 +1,5 @@
 <?php
-use Danzerpress\Controller\Controller;
+use Danzerpress\Controllers\Controller;
 
 global $query_string;
 
