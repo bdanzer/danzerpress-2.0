@@ -242,7 +242,7 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
-  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
+  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'babel', 'scripts']);
   gulp.watch([path.source + 'project/**/*'], ['scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
@@ -253,7 +253,8 @@ gulp.task('watch', function() {
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-  runSequence('styles',
+  runSequence('babel',
+              'styles',
               'scripts',
               ['fonts', 'images'],
               callback);
@@ -265,9 +266,9 @@ gulp.task('babel', () =>
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(concat('main.js'))
+        .pipe(concat('babel.js'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path.dist + 'scripts'))
+        .pipe(gulp.dest(path.source + 'scripts'))
 );
 
 // ### Wiredep

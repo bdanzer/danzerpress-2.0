@@ -63,7 +63,7 @@
 
         });
 
-        if (!$('.hide-header').length) {
+        if (!$('.danzerpress-non-trans').length) {
           //Fix transparent menu when scrolling
           var a = $("html").offset().top;
 

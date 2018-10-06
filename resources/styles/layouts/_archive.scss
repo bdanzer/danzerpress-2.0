@@ -1,33 +1,30 @@
-.blog, .archive {
-    .main-content {
-        padding: 40px 0;
-        article {
-            h2 {
-                margin: 0 0 5px;
-                font-size: 25px;
-            }
-            .image-wrap {
-                line-height: 0;
-                padding-top: 56.25%;
+.archive {
+    article {
+        h2 {
+            margin: 0 0 5px;
+            font-size: 25px;
+        }
+        .image-wrap {
+            line-height: 0;
+            padding-top: 56.25%;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                height: 100%;
                 width: 100%;
-                position: relative;
-                overflow: hidden;
-                img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    object-fit: cover;
-                    height: 100%;
-                    width: 100%;
-                }
             }
-            .danzerpress-button-modern {
-                border-radius: 0px;
-            }
-            &:hover > .image-wrap img {
-                transform: scale(1.2);
-                transition: .5s;
-            }
+        }
+        .danzerpress-button-modern {
+            border-radius: 0px;
+        }
+        &:hover > .image-wrap img {
+            transform: scale(1.2);
+            transition: .5s;
         }
     }
 }

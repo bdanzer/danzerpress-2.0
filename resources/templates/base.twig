@@ -1,47 +1,26 @@
 <!doctype html>
 <html {{ function('language_attributes') }}>
-
     {% include 'templates/head.twig' %}
 
-    <body class="{{ body_class }} drawer drawer--top drawer--navbarTopGutter{{ (site.hide_header and not site.hide_nav) ? ' hide-header' : '' }}" data-template="base.twig">
+    <body class="{{ body_class }} drawer drawer--top drawer--navbarTopGutter{{ (options.hide_header and not options.hide_nav) ? ' hide-header' : '' }}" data-template="base.twig">
         {% include 'templates/header.twig' %}
 
-            {% block body %}
+        {% block body %}
             <div class="main-content">
                 <div class="danzerpress-wrap">
-                    <div class="danzerpress-flex-row">
-                        <main class="danzerpress-two-thirds danzerpress-center">
-                            {% block content %}{% endblock %}
-                        </main>
-                        {% if site.display_sidebar %}
-                            <aside class="danzerpress-one-third danzerpress-sidebar">
-                                {% block sidebar %}
-                                    {% include 'templates/sidebar.twig' %}
-                                {% endblock %}
-                            </aside>
-                        {% endif %}
-                    </div>
+                    {% block content %}
+                        {% include 'parts/content-w-sidebar.twig' %}
+                    {% endblock %}
                 </div>
-                {% block comments %}
-                <div class="comments-area">
-                    <div class="comments-wrap">
-                        {% if post.comments|length %}
-                            <h3>Comments</h3>
-                            {% for comment in post.comments %}
-                                <div class="comment-content">
-                                    <p>{{ comment.content|striptags }}</p>
-                                    <p><strong>{{ comment.author.name|capitalize }}</strong></p>
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                        {{ post.comment_form }}
-                    </div>
-                </div>
-                {% endblock %}
             </div>
+
+            {% block comments %}
+                {% include 'parts/comments.twig' %}
             {% endblock %}
+        {% endblock %}
 
-        {% include 'templates/footer.twig' %}
+        {% block footer %}
+            {% include 'templates/footer.twig' %}
+        {% endblock %}
     </body>
-
 </html>

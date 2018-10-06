@@ -1,0 +1,13 @@
+<div class="danzerpress-flex-row">
+    <main class="danzerpress-two-thirds danzerpress-center">
+        {% block article_content %}
+        {% endblock %}
+    </main>
+    {% if site.display_sidebar %}
+        <aside class="danzerpress-one-third danzerpress-sidebar">
+            {% block sidebar %}
+                {% include 'templates/sidebar.twig' %}
+            {% endblock %}
+        </aside>
+    {% endif %}
+</div>

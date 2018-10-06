@@ -1,10 +1,9 @@
 <?php
-
 namespace Danzerpress\Contexts;
 
 use Timber\Site as TimberSite;
 
-class DanzerpressSite extends TimberSite {
+class Site extends TimberSite {
     public $body_class;
     
     public function __construct() 
@@ -24,16 +23,6 @@ class DanzerpressSite extends TimberSite {
         return implode(' ', $this->body_class);
     }
 
-    public function get_theme_color() 
-    {
-        $color = get_field('theme_color', 'options');
-        
-        if (!empty($color)) {
-            return $color;
-        }
-        return false;
-    }
-
     public function get_header_title() 
     {
         if (is_home() && !is_front_page()) {
@@ -47,17 +36,6 @@ class DanzerpressSite extends TimberSite {
         } else {
             return get_the_title();
         }
-    }
-
-    public function hide_header() 
-    {
-        $header = get_field('title_screen_header');
-        
-        if (is_front_page()) {
-            $header = true;
-        }
-        
-        return $header;
     }
 
     public function header_hook() {

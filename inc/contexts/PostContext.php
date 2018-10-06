@@ -21,10 +21,4 @@ class DanzerpressPostContext extends TimberPost {
         $sidebar_option = get_field('sidebar');
         return $sidebar_option;
     }
-
-    public function hide_nav() 
-    {
-        $header = get_field('hide_nav');
-        return $header;
-    }
 }

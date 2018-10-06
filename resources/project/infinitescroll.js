@@ -3,6 +3,7 @@ class InfiniteScroll {
         this.notLoading = true;
         this.perPage = document.getElementById('infinite-row').getAttribute('data-post-per');
         this.page = document.getElementById('infinite-row').getAttribute('data-page');
+        this.columns = document.getElementById('infinite-row').getAttribute('data-columns');
         this.stop = false;
         this.spinner = jQuery('#spinner');
     }
@@ -14,9 +15,13 @@ class InfiniteScroll {
             }
 
             var y = window.pageYOffset;
-            var archive = document.querySelector('.archive .danzerpress-two-thirds .danzerpress-flex-row');
+            var archive = document.getElementById('infinite-row');
+            var archiveHeight = (archive.offsetHeight * .90);
 
-            if (y > archive.offsetHeight && this.notLoading) {
+            console.log(y);
+            console.log(archiveHeight);
+
+            if (y > archiveHeight && this.notLoading) {
                 this.spinner.toggleClass('danzerpress-no-display');
                 this.getPosts(archive);
             }
@@ -31,42 +36,35 @@ class InfiniteScroll {
         $wpURL = $wpURL + "per_page="+ this.perPage +"&page="+ this.page;
     
         $.ajax({
-            type: 'GET',
-            url: $wpURL,
-            action: 'createHTML'
+            type: 'POST',
+            url: 'wp/wp-admin/admin-ajax.php',
+            data: {
+                action: 'createHTML', 
+                data: {
+                    'columns': this.columns,
+                    'per_page': this.perPage,
+                    'page': this.page
+                }
+            }
          }).done((response) => {
-            response.forEach(post => {
-                obj.insertAdjacentHTML('beforeend', this.generateHtml(post))
-            });
-            this.notLoading = true;
-            this.page++;
-            this.spinner.toggleClass('danzerpress-no-display');
+            if (false !== response.success) {
+                this.page++;
+                this.spinner.toggleClass('danzerpress-no-display');
+                obj.insertAdjacentHTML('beforeend', response.data);
+                this.notLoading = true;
+            } else {
+                this.fail(obj);
+            }
+            
          }).fail(() => {
-            this.stop = true;
-            this.spinner.toggleClass('danzerpress-no-display');
-            obj.insertAdjacentHTML('beforeend', '<div class="danzerpress-col-1"><div class="danzerpress-box danzerpress-white">No More Posts To Show</div></div>')
+            this.fail(obj);
          });
     }
 
-    generateHtml(post) {
-        var html = `<article class="danzerpress-col-2 danzerpress-flex-column wow fadeIn">
-            <div class="image-wrap">
-                <a href="${post.link}">
-                    ${post.thumbnail}
-                </a>
-            </div>
-            <div class="danzerpress-box danzerpress-white">
-                <header>
-                    <h2 class="entry-title"><a class="danzerpress-accent-color" href="https://dev1.danzerpress.com/quia-adipisci-ea-sint-corporis-eaque/">${post.title.rendered}</a></h2>
-                </header>
-                <div class="entry-summary">
-                    ${post.post_excerpt}
-                </div>
-            </div>
-            <a class="danzerpress-button-modern" href="${post.link}">Read More</a>
-        </article>`;
-
-        return html;
+    fail(obj) {
+        this.stop = true;
+        this.spinner.toggleClass('danzerpress-no-display');
+        obj.insertAdjacentHTML('beforeend', '<div class="danzerpress-col-1"><div class="danzerpress-box danzerpress-white">No More Posts To Show</div></div>')
     }
 }
 var infinite = new InfiniteScroll();

@@ -1,16 +1,28 @@
 <article class="{{ 'danzerpress-col-' ~ columns }} danzerpress-flex-column wow fadeIn">
-    <div class="image-wrap">
-        <a href="{{ post.link }}">
-            {{dpImage(post.thumbnail.id)}}
-        </a>
-    </div>
-    <div class="danzerpress-box danzerpress-white">
-        <header>
-            <h2 class="entry-title"><a class="danzerpress-accent-color" href="{{ post.link }}">{{ post.title }}</a></h2>
-        </header>
-        <div class="entry-summary">
-            {{ post.preview.length(10).force.end('').read_more('') }}
+        <div class="image-wrap">
+            <a href="{{ post.link }}">
+                {{dpImage(post.thumbnail.id)}}
+            </a>
         </div>
-    </div>
+        <div class="danzerpress-box danzerpress-white">
+            <header>
+                <h2 class="entry-title"><a class="danzerpress-accent-color" href="{{ post.link }}">{{ post.title }}</a></h2>
+            </header>
+            <div class="entry-summary">
+                {{ post.preview.length(10).force.end('').read_more('') }}
+            </div>
+        </div>
     <a class="danzerpress-button-modern" href="{{ post.link }}">Read More</a>
 </article>
+
+header
+hero image closer
+divide widgets (basic style)
+widget bars
+featured posts two-thirds
+
+single page:
+just links for prev next
+
+if they post videos 
+link search icon to seach page

@@ -1,13 +1,1 @@
-{% extends "templates/base.twig" %}
-
-{% block body %}
-    <div class="main-content">
-        <div class="danzerpress-wrap">
-            <div class="danzerpress-flex-row">
-                {% for post in posts %}
-                    {% include "templates/content.twig" with {post: post, columns: 3}  %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-{% endblock %}
+{% extends "archive.twig" %}

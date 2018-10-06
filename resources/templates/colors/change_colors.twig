@@ -5,28 +5,29 @@
     .danzerpress-sidebar a,
     .danzerpress-accent-color,
     .widget ul a {
-        color: {{site.get_theme_color}};
+        color: {{options.get_theme_color}};
     }
     ::-moz-selection { 
-        background: {{site.get_theme_color}} !important; 
+        background: {{options.get_theme_color}} !important; 
         color: white;
     }
     ::selection { 
-        background: {{site.get_theme_color}} !important; 
+        background: {{options.get_theme_color}} !important; 
         color: white;
     }
     .danzerpress-accent-background {
-        background: {{site.get_theme_color}} !important;
+        background: {{options.get_theme_color}} !important;
     }
     a.danzerpress-button-modern,
     #submit,
     .danzerpress-sidebar input.search-submit,
     .menu-cta a {
-        background: {{site.get_theme_color}};
-        border-color: {{site.get_theme_color}};
+        background: {{options.get_theme_color}};
+        border-color: {{options.get_theme_color}};
     }
     header.drawer-navbar.drawer-navbar--fixed .drawer-container .drawer-menu li:hover,
-    blockquote {
-        border-color: {{site.get_theme_color}};
+    blockquote,
+    .widget {
+        border-color: {{options.get_theme_color}};
     }
 </style>
