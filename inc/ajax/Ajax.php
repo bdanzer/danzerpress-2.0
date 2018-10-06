@@ -1,11 +1,13 @@
 <?php
 namespace Danzerpress\Ajax;
 
+use Timber;
+
 Class Ajax {
     public function __construct() 
     {
-        add_action('wp_ajax_createHTML', [$this, 'infinite_scroll']);
-        add_action('wp_ajax_nopriv_createHTML', [$this, 'infinite_scroll']);
+        add_action('wp_ajax_infinite_scroll', [$this, 'infinite_scroll']);
+        add_action('wp_ajax_nopriv_infinite_scroll', [$this, 'infinite_scroll']);
     }
 
     public function infinite_scroll() {
@@ -27,7 +29,7 @@ Class Ajax {
                 'post' => $post,
                 'columns' => $data['columns']
             ];
-            $html .= Timber::compile('content.twig', $context);
+            $html .= Timber::compile('child-front-content.twig', $context);
         }
 
         wp_send_json_success($html);        

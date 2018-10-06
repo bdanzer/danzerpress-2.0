@@ -166,8 +166,6 @@ function () {
         var y = window.pageYOffset;
         var archive = document.getElementById('infinite-row');
         var archiveHeight = archive.offsetHeight * .90;
-        console.log(y);
-        console.log(archiveHeight);
 
         if (y > archiveHeight && _this.notLoading) {
           _this.spinner.toggleClass('danzerpress-no-display');
@@ -187,7 +185,7 @@ function () {
         type: 'POST',
         url: 'wp/wp-admin/admin-ajax.php',
         data: {
-          action: 'createHTML',
+          action: 'infinite_scroll',
           data: {
             'columns': this.columns,
             'per_page': this.perPage,

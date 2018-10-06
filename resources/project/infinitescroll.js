@@ -18,9 +18,6 @@ class InfiniteScroll {
             var archive = document.getElementById('infinite-row');
             var archiveHeight = (archive.offsetHeight * .90);
 
-            console.log(y);
-            console.log(archiveHeight);
-
             if (y > archiveHeight && this.notLoading) {
                 this.spinner.toggleClass('danzerpress-no-display');
                 this.getPosts(archive);
@@ -36,7 +33,7 @@ class InfiniteScroll {
             type: 'POST',
             url: 'wp/wp-admin/admin-ajax.php',
             data: {
-                action: 'createHTML', 
+                action: 'infinite_scroll', 
                 data: {
                     'columns': this.columns,
                     'per_page': this.perPage,
