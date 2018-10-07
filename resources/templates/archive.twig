@@ -2,8 +2,7 @@
 
 {% block content %}
     {% block title %}{% endblock %}
-    
-    <div class="archive">
-        {% include 'infinite_scroll.twig' with {columns: 3} %}
-    </div>
+    {% include 'parts/infinite_scroll.twig' with {columns: 3} %}
 {% endblock %}
+
+{% block comments %}{% endblock %}

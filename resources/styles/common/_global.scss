@@ -9,11 +9,11 @@ body {
 
 body,
 .panel {
-  background-color: #fff;
+  background-color: $white;
 }
 
 body {
-  background: #efefef;
+  background: $light-grey;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -24,6 +24,9 @@ body {
   &.hide-header {
     padding-top: 60px;
   }
+  .main-content {
+		padding: 40px 0;
+	}
 }
 
 .danzerpress-main-content {
@@ -36,7 +39,7 @@ body {
 }
 
 a {
-  color: #4B5;
+  color: $brand-primary;
   text-decoration: none;
 }
 
@@ -65,10 +68,10 @@ h6 {
 }
 
 blockquote {
-  background: #efefef;
+  background: $light-grey;
   padding: 20px 40px;
   margin: 0 0 20px;
-  border-left: 4px solid #ee7a00;
+  border-left: 4px solid $brand-primary;
 }
 
 ol, ul {
@@ -93,13 +96,13 @@ img {
       font-size: 22px;
     }
     textarea {
-      background: #fff;
+      background: $white;
     }
     input {
-      background: #fff;
+      background: $white;
     }
     .comment-content {
-      background: #fff;
+      background: $white;
       padding: 20px;
       margin-bottom: 20px;
     }

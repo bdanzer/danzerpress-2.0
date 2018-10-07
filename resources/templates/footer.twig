@@ -1,4 +1,32 @@
 <footer>
+    <div class="footer-main">
+        <div class="danzerpress-wrap">
+            <div class="danzerpress-flex-row">
+                <div class="danzerpress-col-3">
+                    {{ dpImage('https://danzerpress.com/wp-content/uploads/2018/01/danzerpressofficial-e1516152155615.png') }}
+                    <h3 class="danzerpress-color-white">Hello</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl dui, faucibus viverra risus elementum, volutpat placerat erat. Donec hendrerit molestie sem vitae bibendum. Integer tempor diam massa, aliquam dignissim justo bibendum in. Nunc pharetra lectus urna, ac fermentum eros pulvinar in.</p> 
+                </div>
+                <div class="danzerpress-col-3">
+                    <h3 class="danzerpress-color-white">Hello</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Sample</li>
+                        <li>Blog</li>
+                        <li>Contact</li>
+                    </ul> 
+                </div>
+                <div class="danzerpress-col-3">
+                    <h3 class="danzerpress-color-white">Social</h3>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="footer-bottom-bar">
         <div class="danzerpress-wrap">
             {{ fn('get_field', 'bottom_bar', 'option')|striptags('<a>') }}

@@ -11,7 +11,7 @@
         {{ __('Sorry, no results were found.', 'sage') }}
     {% else %}
         <div class="archive" style="padding: 40px 0;">
-            {% include 'infinite_scroll.twig' with {columns: 3} %}
+            {% include 'parts/infinite_scroll.twig' with {columns: 3} %}
         </div>
     {% endif %}
 {% endblock %}

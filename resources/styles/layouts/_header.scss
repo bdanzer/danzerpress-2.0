@@ -76,12 +76,12 @@
 						border-style: solid;
 					}
 					a {
-						color: white;
+						color: $white;
 					}
 				}
 				@include breakpoint(ipad_side, max-width) {
 					flex-direction: column;
-					background: white;
+					background: $white;
 					width: 100%;
 					padding: 0px;
 					li {
@@ -103,17 +103,18 @@
 	}
 	.danzerpress-logo {
 		width: auto;
+		max-height: 60px;
 	}
 	.dark-logo {
 		display: none;
 	}
 	&.danzerpress-trans {
 		.drawer-hamburger-icon, .drawer-hamburger-icon:after, .drawer-hamburger-icon:before {
-			background: white;
+			background: $white;
 		}
 	}
 	&.danzerpress-non-trans {
-		background: #fff;
+		background: $white;
 		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.078);
 		.light-logo {
 			display: none;

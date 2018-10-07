@@ -142,7 +142,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var InfiniteScroll =
 /*#__PURE__*/
 function () {
-  function InfiniteScroll() {
+  function InfiniteScroll(archive) {
     _classCallCheck(this, InfiniteScroll);
 
     this.notLoading = true;
@@ -151,6 +151,7 @@ function () {
     this.columns = document.getElementById('infinite-row').getAttribute('data-columns');
     this.stop = false;
     this.spinner = jQuery('#spinner');
+    this.archive = archive;
   }
 
   _createClass(InfiniteScroll, [{
@@ -164,13 +165,14 @@ function () {
         }
 
         var y = window.pageYOffset;
-        var archive = document.getElementById('infinite-row');
-        var archiveHeight = archive.offsetHeight * .90;
+        var archiveHeight = archive.offsetHeight * .80;
+        console.log('Y: ' + y);
+        console.log('Arhive: ' + archiveHeight);
 
         if (y > archiveHeight && _this.notLoading) {
           _this.spinner.toggleClass('danzerpress-no-display');
 
-          _this.getPosts(archive);
+          _this.getPosts(_this.archive);
         }
       });
     }
@@ -183,7 +185,7 @@ function () {
       var $ = jQuery;
       $.ajax({
         type: 'POST',
-        url: 'wp/wp-admin/admin-ajax.php',
+        url: dp.home_url + '/wp/wp-admin/admin-ajax.php',
         data: {
           action: 'infinite_scroll',
           data: {
@@ -212,15 +214,19 @@ function () {
     value: function fail(obj) {
       this.stop = true;
       this.spinner.toggleClass('danzerpress-no-display');
-      obj.insertAdjacentHTML('beforeend', '<div class="danzerpress-col-1"><div class="danzerpress-box danzerpress-white">No More Posts To Show</div></div>');
+      obj.insertAdjacentHTML('beforeend', '<div class="danzerpress-col-1"><div class="infinite-no-posts danzerpress-accent-border">No More Posts To Show</div></div>');
     }
   }]);
 
   return InfiniteScroll;
 }();
 
-var infinite = new InfiniteScroll();
-infinite.calculateScroll();
+var archive = document.getElementById('infinite-row');
+
+if (archive) {
+  var infinite = new InfiniteScroll(archive);
+  infinite.calculateScroll();
+}
 "use strict";
 
 if (jQuery) {

@@ -5,15 +5,29 @@ use Timber\Image as TimberImage;
 
 class Image extends TimberImage {
     protected $classes;
+    protected $cache_id = false;
 
     public function __construct($image, $classes = null) 
     {
-        parent::__construct($image);
+        $validate_int = filter_var('2', FILTER_VALIDATE_INT);
+        $image_id = ($validate_int) ? $image : null;
+
+        parent::__construct($image_id);
+        
+        if ($image) {
+            $this->cache_id = $image;
+        } 
+        
         $this->classes = $classes;
     }
 
     public function build_image() 
     {
+        $html = get_transient($this->cache_id . '_dp_image');
+        if ($html && $this->cache_id) {
+            return $html;
+        }
+        
         $image = [
             'src' => $this->src(),
             'alt' => $this->alt(),
@@ -30,6 +44,8 @@ class Image extends TimberImage {
         $alt = 'alt="' . $image_alt . '"';
 
         $html = '<img ' . $class . $alt . ' ' . $src . '/>';
+
+        set_transient($this->cache_id . '_dp_image', $html, 999);
 
         return $html;
     }

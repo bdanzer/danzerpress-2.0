@@ -8,6 +8,14 @@ Class Ajax {
     {
         add_action('wp_ajax_infinite_scroll', [$this, 'infinite_scroll']);
         add_action('wp_ajax_nopriv_infinite_scroll', [$this, 'infinite_scroll']);
+        add_action('wp_enqueue_scripts', [$this, 'localize_scripts'], 101);
+    }
+
+    public function localize_scripts() 
+    {
+        wp_localize_script('sage/js', 'dp', array( 
+            'home_url' => get_home_url()
+        ));
     }
 
     public function infinite_scroll() {
@@ -29,7 +37,7 @@ Class Ajax {
                 'post' => $post,
                 'columns' => $data['columns']
             ];
-            $html .= Timber::compile('child-front-content.twig', $context);
+            $html .= Timber::compile(apply_filters('ajax_template', 'content.twig'), $context);
         }
 
         wp_send_json_success($html);        

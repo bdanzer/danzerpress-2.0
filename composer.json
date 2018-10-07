@@ -23,6 +23,7 @@
   },
   "autoload": {
       "psr-4": {
+          "Danzerpress\\Framework\\": ["inc"],
           "Danzerpress\\Contexts\\": ["inc/contexts"],
           "Danzerpress\\Controllers\\": ["inc/controllers"],
           "Danzerpress\\Chunks\\": ["inc/chunks"],

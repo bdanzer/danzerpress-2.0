@@ -1,11 +1,12 @@
 class InfiniteScroll {
-    constructor() {
+    constructor(archive) {
         this.notLoading = true;
         this.perPage = document.getElementById('infinite-row').getAttribute('data-post-per');
         this.page = document.getElementById('infinite-row').getAttribute('data-page');
         this.columns = document.getElementById('infinite-row').getAttribute('data-columns');
         this.stop = false;
         this.spinner = jQuery('#spinner');
+        this.archive = archive;
     }
     
     calculateScroll() {
@@ -15,12 +16,15 @@ class InfiniteScroll {
             }
 
             var y = window.pageYOffset;
-            var archive = document.getElementById('infinite-row');
-            var archiveHeight = (archive.offsetHeight * .90);
+            
+            var archiveHeight = (archive.offsetHeight * .80);
+
+            console.log('Y: ' + y);
+            console.log('Arhive: ' + archiveHeight);
 
             if (y > archiveHeight && this.notLoading) {
                 this.spinner.toggleClass('danzerpress-no-display');
-                this.getPosts(archive);
+                this.getPosts(this.archive);
             }
         });
     }
@@ -31,7 +35,7 @@ class InfiniteScroll {
     
         $.ajax({
             type: 'POST',
-            url: 'wp/wp-admin/admin-ajax.php',
+            url: dp.home_url + '/wp/wp-admin/admin-ajax.php',
             data: {
                 action: 'infinite_scroll', 
                 data: {
@@ -58,8 +62,12 @@ class InfiniteScroll {
     fail(obj) {
         this.stop = true;
         this.spinner.toggleClass('danzerpress-no-display');
-        obj.insertAdjacentHTML('beforeend', '<div class="danzerpress-col-1"><div class="danzerpress-box danzerpress-white">No More Posts To Show</div></div>')
+        obj.insertAdjacentHTML('beforeend', '<div class="danzerpress-col-1"><div class="infinite-no-posts danzerpress-accent-border">No More Posts To Show</div></div>')
     }
 }
-var infinite = new InfiniteScroll();
-infinite.calculateScroll();
+
+var archive = document.getElementById('infinite-row');
+if (archive) {
+    var infinite = new InfiniteScroll(archive);
+    infinite.calculateScroll();
+}

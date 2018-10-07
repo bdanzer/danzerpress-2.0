@@ -6,6 +6,6 @@ use Timber;
 class InfiniteScroll extends Chunk {
     public static function chunk($context) 
     {
-        Timber::render('infinite_scroll.twig', $context[0]);
+        Timber::render('parts/infinite_scroll.twig', $context[0]);
     }
 }

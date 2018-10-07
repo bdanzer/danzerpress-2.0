@@ -1,7 +1,7 @@
 .single {
     .main-content {
         padding: 40px 0 0;
-        background: white;
+        background: $white;
         article {
             .entry-title {
                 margin: 20px 0 5px;
@@ -38,7 +38,7 @@
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    color: #fff;
+                    color: $white;
                     transform: translate(-50%,-50%);
                     line-height: 1.5;
                     text-align: center;

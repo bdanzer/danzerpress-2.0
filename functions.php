@@ -92,3 +92,4 @@ new Danzerpress\Twig\TwigFunctions;
 new Danzerpress\Twig\TwigLoading;
 new Danzerpress\Rest\RestApi;
 new Danzerpress\Ajax\Ajax;
+new Danzerpress\Framework\DanzerpressInterface;
