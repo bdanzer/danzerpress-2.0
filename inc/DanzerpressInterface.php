@@ -4,7 +4,7 @@ namespace Danzerpress\Framework;
 Class DanzerpressInterface {
     public function __construct() 
     {
-        $plugin_url = plugins_url();
+        $plugin_url = get_home_url() . 'app/plugins';
         define("DP_PLUGIN_URL", (true === IS_DEV) ? $plugin_url . '/danzerpress-plugin/' : $plugins_url . '/dp-plugin/');
         //wp_get_theme()->parent()->get('Version')
         define("DP_CACHE_BUFFER", null);
