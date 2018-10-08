@@ -109,7 +109,7 @@ function assets() {
   // Google Fonts
   wp_enqueue_style( 'google fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Raleway:400,500,700,800|Roboto', false);
   // Google Map
-  wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAFVrEjgketoyNgnya0FkoS3vIIl3_aeNg');
+  wp_enqueue_script('google-map-api', 'https://maps.googleapis.com/maps/api/js?key=' . get_field('google_map_api', 'option'));
 
   // Sage JS
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);

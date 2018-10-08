@@ -23,10 +23,10 @@ class Image extends TimberImage {
 
     public function build_image() 
     {
-        $html = get_transient($this->cache_id . '_dp_image');
-        if ($html && $this->cache_id) {
-            return $html;
-        }
+        //$html = get_transient($this->cache_id . '_dp_image');
+        // if ($html && $this->cache_id) {
+        //     return $html;
+        // }
         
         $image = [
             'src' => $this->src(),
@@ -45,7 +45,7 @@ class Image extends TimberImage {
 
         $html = '<img ' . $class . $alt . ' ' . $src . '/>';
 
-        set_transient($this->cache_id . '_dp_image', $html, 999);
+        //set_transient($this->cache_id . '_dp_image', $html, 999);
 
         return $html;
     }
