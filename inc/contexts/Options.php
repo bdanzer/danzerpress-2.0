@@ -17,6 +17,16 @@ class Options {
         return false;
     }
 
+    public function get_menu_background() 
+    {
+        return get_field('menu_background', 'options');
+    }
+
+    public function get_menu_color() 
+    {
+        return get_field('menu_color', 'options');
+    }
+
     public function get_dark_logo() 
     {
         return get_field('non_transparent_logo', 'options');
