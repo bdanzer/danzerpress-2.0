@@ -149,9 +149,11 @@ function () {
     this.perPage = document.getElementById('infinite-row').getAttribute('data-post-per');
     this.page = document.getElementById('infinite-row').getAttribute('data-page');
     this.columns = document.getElementById('infinite-row').getAttribute('data-columns');
+    this.template = document.getElementById('infinite-row').getAttribute('data-template');
     this.stop = false;
     this.spinner = jQuery('#spinner');
     this.archive = archive;
+    console.log(this.template);
   }
 
   _createClass(InfiniteScroll, [{
@@ -166,8 +168,6 @@ function () {
 
         var y = window.pageYOffset;
         var archiveHeight = archive.offsetHeight * .80;
-        console.log('Y: ' + y);
-        console.log('Arhive: ' + archiveHeight);
 
         if (y > archiveHeight && _this.notLoading) {
           _this.spinner.toggleClass('danzerpress-no-display');
@@ -191,7 +191,8 @@ function () {
           data: {
             'columns': this.columns,
             'per_page': this.perPage,
-            'page': this.page
+            'page': this.page,
+            'template': this.template
           }
         }
       }).done(function (response) {
@@ -242,4 +243,75 @@ if (jQuery) {
     });
   });
 }
+"use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Slider =
+/*#__PURE__*/
+function () {
+  function Slider() {
+    _classCallCheck(this, Slider);
+
+    this.sliderWrap = document.querySelector('.danzerpress-slider-wrap');
+    this.slider = document.querySelector('.danzerpress-slider');
+    this.createPagination();
+  }
+
+  _createClass(Slider, [{
+    key: "createPagination",
+    value: function createPagination() {
+      var _this = this;
+
+      var sliderPagination = "\n            <div class=\"danzerpress-slider-pagination\">\n                <ul>\n                </ul>\n            </div>\n        ";
+      var doc = new DOMParser().parseFromString(sliderPagination, 'text/html').body.firstChild;
+
+      var _loop = function _loop(i) {
+        var button = document.createElement('li');
+        doc.children[0].append(button);
+        button.addEventListener('click', function (e) {
+          var activeDiv = document.querySelectorAll('.danzerpress-slider div.active');
+          var activeLi = document.querySelectorAll('.danzerpress-slider-pagination ul li');
+
+          _this.setActiveStuff(activeDiv);
+
+          _this.setActiveStuff(activeLi);
+
+          _this.slider.children[i].classList.add('active');
+
+          e.target.classList.add('active');
+        });
+
+        if (i == 0) {
+          button.classList.add('active');
+
+          _this.slider.children[i].classList.add('active');
+        }
+      };
+
+      for (var i = 0; i < this.slider.children.length; i++) {
+        _loop(i);
+      }
+
+      this.sliderWrap.append(doc);
+    }
+  }, {
+    key: "setActiveStuff",
+    value: function setActiveStuff(thing) {
+      if (thing) {
+        thing.forEach(function (div) {
+          div.classList.remove('active');
+        });
+      }
+    }
+  }]);
+
+  return Slider;
+}();
+
+new Slider();
 //# sourceMappingURL=babel.js.map

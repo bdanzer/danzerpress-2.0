@@ -37,7 +37,7 @@ Class Ajax {
                 'post' => $post,
                 'columns' => $data['columns']
             ];
-            $html .= Timber::compile(apply_filters('ajax_template', 'content.twig'), $context);
+            $html .= Timber::compile(apply_filters('ajax_template', [$data['template'], 'content.twig']), $context);
         }
 
         wp_send_json_success($html);        

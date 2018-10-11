@@ -1,5 +1,5 @@
 <div class="archive danzerpress-row-fix">
-    <div id="infinite-row" class="danzerpress-flex-row " data-post-per="{{posts_per_page}}" data-page="{{post_page}}" data-columns="{{columns}}">
+    <div id="infinite-row" class="danzerpress-flex-row " data-post-per="{{posts_per_page}}" data-page="{{post_page}}" data-columns="{{columns}}" data-template="{{template}}">
         {% for post in posts %}
             {% include [template, 'content.twig'] with {columns: columns} %}
         {% endfor %}

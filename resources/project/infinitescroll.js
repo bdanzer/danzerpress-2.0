@@ -4,9 +4,12 @@ class InfiniteScroll {
         this.perPage = document.getElementById('infinite-row').getAttribute('data-post-per');
         this.page = document.getElementById('infinite-row').getAttribute('data-page');
         this.columns = document.getElementById('infinite-row').getAttribute('data-columns');
+        this.template = document.getElementById('infinite-row').getAttribute('data-template');
         this.stop = false;
         this.spinner = jQuery('#spinner');
         this.archive = archive;
+
+        console.log(this.template);
     }
     
     calculateScroll() {
@@ -18,9 +21,6 @@ class InfiniteScroll {
             var y = window.pageYOffset;
             
             var archiveHeight = (archive.offsetHeight * .80);
-
-            console.log('Y: ' + y);
-            console.log('Arhive: ' + archiveHeight);
 
             if (y > archiveHeight && this.notLoading) {
                 this.spinner.toggleClass('danzerpress-no-display');
@@ -41,7 +41,8 @@ class InfiniteScroll {
                 data: {
                     'columns': this.columns,
                     'per_page': this.perPage,
-                    'page': this.page
+                    'page': this.page,
+                    'template': this.template
                 }
             }
          }).done((response) => {
