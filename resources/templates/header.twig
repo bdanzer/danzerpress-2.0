@@ -31,6 +31,8 @@
 {% if false == options.hide_header %}
 	<div class="danzerpress-title-area danzerpress-flex-column danzerpress-align-content danzerpress-justify-content">
 		{{dpImage(post.get_header_thumbnail, 'danzerpress-parallax')}}
-		<h1 class="danzerpress-title">{{ site.get_header_title }}</h1>
+		<div class="danzerpress-wrap">
+			<h1 class="danzerpress-title">{{ site.get_header_title }}</h1>
+		</div>
 	</div>
 {% endif %}
