@@ -2,17 +2,16 @@
 namespace Danzerpress\Twig;
 
 use Timber;
+use Danzerpress\DP;
 
 Class TwigLoading {
     protected $plugin_url;
 
     public function __construct() 
     {
-        if (true === IS_DEV) {
-            $this->plugin_url = WP_PLUGIN_DIR . '/danzerpress-plugin/resources/templates';
-        } else {
-            $this->plugin_url = WP_PLUGIN_DIR . '/dp-plugin/resources/templates';
-        }
+        if (class_exists(DP::class)) {
+            $this->plugin_url = DP::get_dir() . '/resources/templates';
+        } 
 
         add_action('init', function() {
             $this->timber_dir();

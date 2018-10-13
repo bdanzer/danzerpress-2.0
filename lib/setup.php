@@ -5,6 +5,8 @@ namespace Roots\Sage\Setup;
 use Roots\Sage\Assets;
 use Timber;
 
+define('DP_CACHE_BUFFER', null);
+
 /**
  * Theme setup
  */

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb79fd763030a8d0db7e6d053e402ceb6
+class ComposerStaticInitee1dfe7bc5c3d2e183cf3ce9f79edd4b
 {
     public static $prefixLengthsPsr4 = array (
         'D' => 
@@ -12,11 +12,11 @@ class ComposerStaticInitb79fd763030a8d0db7e6d053e402ceb6
             'Danzerpress\\Twig\\' => 17,
             'Danzerpress\\Rest\\' => 17,
             'Danzerpress\\Images\\' => 19,
-            'Danzerpress\\Framework\\' => 22,
             'Danzerpress\\Controllers\\' => 24,
             'Danzerpress\\Contexts\\' => 21,
             'Danzerpress\\Chunks\\' => 19,
             'Danzerpress\\Ajax\\' => 17,
+            'Danzerpress\\' => 12,
         ),
     );
 
@@ -32,10 +32,6 @@ class ComposerStaticInitb79fd763030a8d0db7e6d053e402ceb6
         'Danzerpress\\Images\\' => 
         array (
             0 => __DIR__ . '/../..' . '/inc/images',
-        ),
-        'Danzerpress\\Framework\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/inc',
         ),
         'Danzerpress\\Controllers\\' => 
         array (
@@ -53,13 +49,17 @@ class ComposerStaticInitb79fd763030a8d0db7e6d053e402ceb6
         array (
             0 => __DIR__ . '/../..' . '/inc/ajax',
         ),
+        'Danzerpress\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc',
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb79fd763030a8d0db7e6d053e402ceb6::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb79fd763030a8d0db7e6d053e402ceb6::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitee1dfe7bc5c3d2e183cf3ce9f79edd4b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitee1dfe7bc5c3d2e183cf3ce9f79edd4b::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
