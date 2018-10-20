@@ -33,6 +33,10 @@ class Site extends TimberSite {
             return '404';
         } elseif (is_search()) {
             return 'Search';
+        } elseif (is_author()) {
+            $author_id = get_query_var('author');
+            $author_name = get_the_author_meta('user_nicename', $author_id);
+            return ($author_name) ?: 'Author';
         } else {
             return get_the_title();
         }

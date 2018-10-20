@@ -23,8 +23,8 @@
 			display: block;
 		}
 		.drawer-dropdown-menu {
-			top: 60px;
-			left: 160px;
+			top: 56px;
+			left: -47px;
 			li {
 				&:hover {
 					border-color: transparent !important;
@@ -71,6 +71,7 @@
 					display: flex;
 					flex: 1 0 auto;
 					align-items: center;
+					position: relative;
 					&:hover {
 						border-color: #05c4eb;
 						border-style: solid;
