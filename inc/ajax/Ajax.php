@@ -24,7 +24,8 @@ Class Ajax {
         $posts = Timber::get_posts([
             'posts_per_page' => $data['per_page'],
             'paged' => $data['page'],
-            'post_type' => 'post'
+            'post_type' => 'post',
+            'post_status' => 'publish'
         ]);
 
         if (empty($posts)) {
