@@ -80,7 +80,7 @@
             },
             "message": "Check for Full screen hero section",
             "default_value": 0,
-            "ui": 0,
+            "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
         },
@@ -107,7 +107,7 @@
             },
             "message": "Check for full screen title sections",
             "default_value": 0,
-            "ui": 0,
+            "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
         },
@@ -115,7 +115,7 @@
             "key": "field_5a067af808e91",
             "label": "Title Section Padding",
             "name": "title_section_padding",
-            "type": "text",
+            "type": "number",
             "instructions": "This field supports a custom css rule. Type a css padding rule like:\r\n\r\npadding: 50px 0 40px;",
             "required": 0,
             "conditional_logic": [
@@ -132,11 +132,34 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "padding: 170px 0;",
-            "placeholder": "padding: 170px 0;",
+            "default_value": 170,
+            "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5bcfe1c5c5c2c",
+            "label": "Section Padding",
+            "name": "section_padding",
+            "type": "number",
+            "instructions": "The top and bottom padding of all sections",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 140,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_5a067c52981ac",
@@ -152,6 +175,25 @@
                 "id": ""
             },
             "default_value": ""
+        },
+        {
+            "key": "field_5bcfdaf71d8cf",
+            "label": "Button Animations",
+            "name": "button_animation",
+            "type": "text",
+            "instructions": "Use any of the animations here: https:\/\/daneden.github.io\/animate.css\/",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "rubberBand",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5b89c89918c3e",
@@ -209,5 +251,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538804328
+    "modified": 1540356310
 }
