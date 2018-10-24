@@ -32,6 +32,21 @@ class Options {
         return get_field('non_transparent_logo', 'options');
     }
 
+    public function get_button_animation() 
+    {
+        return get_field('button_animation', 'options');
+    }
+
+    public function get_section_padding() 
+    {
+        return get_field('section_padding', 'options');
+    }
+
+    public function get_title_section_padding() 
+    {
+        return get_field('title_section_padding', 'options');
+    }
+
     public function get_trans_nav() 
     {
         if (is_front_page()) {
