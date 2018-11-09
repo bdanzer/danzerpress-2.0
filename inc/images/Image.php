@@ -5,9 +5,10 @@ use Timber\Image as TimberImage;
 
 class Image extends TimberImage {
     protected $classes;
+    protected $attr;
     protected $cache_id = false;
 
-    public function __construct($image, $classes = null) 
+    public function __construct($image, $classes = null, $attr = null) 
     {
         $validate_int = filter_var('2', FILTER_VALIDATE_INT);
         $image_id = ($validate_int) ? $image : null;
@@ -16,8 +17,12 @@ class Image extends TimberImage {
         
         if ($image) {
             $this->cache_id = $image;
-        } 
+        }
         
+        if ($attr) {
+            $this->attr = $attr;
+        }
+
         $this->classes = $classes;
     }
 
@@ -31,6 +36,7 @@ class Image extends TimberImage {
         $image = [
             'src' => $this->src(),
             'alt' => $this->alt(),
+            'attr' => $this->attr,
             'class' => $this->classes
         ];
 
@@ -41,10 +47,14 @@ class Image extends TimberImage {
 
         $class = 'class="' . $image_class . '" ';
         $src = 'src="' . $image_src . '"';
-        $alt = 'alt="' . $image_alt . '"';
+        $alt = 'alt="' . $image_alt . '" ';
+        $attr = $image['attr'];
 
-        $html = '<img ' . $class . $alt . ' ' . $src . '/>';
+        $html = '<img ' . $class . $alt . $attr . ' ' . $src . '/>';
 
+        if (strrpos($html, '#src#')) {
+            $html = str_replace('#src#', $image_src, $html);
+        }
         //set_transient($this->cache_id . '_dp_image', $html, 999);
 
         return $html;

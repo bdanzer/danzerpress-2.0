@@ -33,4 +33,13 @@ if ( file_exists( $autoload_path ) ) {
     require_once( $autoload_path );
 }
 
+function dpDie($value) {
+  if (is_array($value)) {
+    var_dump($value);
+  } else {
+    var_dump($value);
+  }
+  die;
+}
+
 new Danzerpress\DP_Theme;
