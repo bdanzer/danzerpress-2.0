@@ -46,10 +46,6 @@ function setup() {
   // Enable HTML5 markup support
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
   add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
-
-  // Use main stylesheet for visual editor
-  // To add custom styles edit /assets/styles/layouts/_tinymce.scss
-  add_editor_style(Assets\asset_path('styles/main.css'));
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 

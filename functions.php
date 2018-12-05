@@ -1,4 +1,14 @@
 <?php
+
+/**
+ * Check if Timber is activated
+ */
+if ( ! class_exists( 'Timber' ) ) {
+  add_action( 'admin_notices', function() {
+      echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
+  } );
+  return;
+}
 /**
  * Sage includes
  *
@@ -42,4 +52,27 @@ function dpDie($value) {
   die;
 }
 
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/bdanzer/danzerpress-2.0/',
+	__FILE__,
+	'danzerpress'
+);
+//Optional: If you're using a private repository, specify the access token like this:
+//$myUpdateChecker->setAuthentication('your-token-here');
+
+//Optional: Set the branch that contains the stable release.
+//$myUpdateChecker->setBranch('master');
+
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+
 new Danzerpress\DP_Theme;
+
+function is_section() {
+  $sections = 'Danzerpress\\Sections';
+  if (class_exists($sections)) {
+    return $sections::is_section();
+  } 
+
+  return false;
+}

@@ -3,7 +3,7 @@ namespace Danzerpress\Contexts;
 
 use Timber\Site as TimberSite;
 
-class Site extends TimberSite {
+class DanzerpressSite extends TimberSite {
     public $body_class;
     
     public function __construct() 

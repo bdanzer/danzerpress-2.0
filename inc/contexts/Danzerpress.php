@@ -19,7 +19,7 @@ class Danzerpress {
             self::$context = [];
             self::$context['menu'] = new Timber\Menu;
             self::$context['body_class'] = implode(' ', get_body_class());
-            self::$context['site'] = new Site();
+            self::$context['site'] = new DanzerpressSite();
             self::$context['chunks'] = new Chunks();
             self::$context['options'] = new Options();
         }
