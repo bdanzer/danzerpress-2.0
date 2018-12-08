@@ -26,10 +26,12 @@ Class TwigLoading {
   
     public function timber_locations() 
     {
-        Timber::$locations = [
+        $locations = [
             get_stylesheet_directory().'/resources/templates',
             get_template_directory().'/resources/templates',
             $this->plugin_url
         ];
+
+        Timber::$locations = apply_filters('dp_timber_locations', $locations);
     }
 }

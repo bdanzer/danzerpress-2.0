@@ -49,9 +49,6 @@ class Options {
 
     public function get_trans_nav() 
     {
-        if (is_front_page()) {
-            return false;
-        }
         return get_field('navigation_style', 'options');
     }
 
@@ -70,7 +67,7 @@ class Options {
     {
         $header = get_field('title_screen_header');
         
-        if (is_front_page()) {
+        if (is_front_page() && is_section()) {
             $header = true;
         }
         

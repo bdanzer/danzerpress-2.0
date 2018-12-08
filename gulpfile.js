@@ -242,8 +242,8 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
-  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'babel', 'scripts']);
-  gulp.watch([path.source + 'project/**/*'], ['scripts']);
+  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
+  gulp.watch([path.source + 'project/**/*'], ['scripts', 'babel']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
   gulp.watch(['bower.json', `${setPath}/manifest.json`], ['build']);
@@ -253,8 +253,7 @@ gulp.task('watch', function() {
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-  runSequence('babel',
-              'styles',
+  runSequence('styles',
               'scripts',
               ['fonts', 'images'],
               callback);

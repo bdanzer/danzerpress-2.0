@@ -34,7 +34,17 @@ class Controller {
     }
 
     public function render() 
-    {
-        Timber::render($this->templates, $this->context, Danzerpress::get_ttl());
+    {   
+        $filters = [
+            'context' => $this->context,
+            'templates' => $this->templates
+        ];
+
+        /**
+         * Can filter the context and templates before render
+         */
+        $filters = apply_filters(basename($this->templates[0], '.twig') . '_render', $filters);
+        
+        Timber::render($filters['templates'], $filters['context']);
     }
 }

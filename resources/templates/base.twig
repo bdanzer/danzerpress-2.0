@@ -2,7 +2,7 @@
 <html {{ function('language_attributes') }}>
     {% include 'templates/head.twig' %}
 
-    <body class="{{ body_class }} drawer drawer--top drawer--navbarTopGutter{{ (options.hide_header and not options.hide_nav) ? ' hide-header' : '' }}" data-template="base.twig">
+    <body class="{{ body_class }} drawer drawer--top drawer--navbarTopGutter{{ (options.hide_header and false == options.hide_nav) ? ' hide-header' : '' }}" data-template="base.twig">
         {% include 'templates/header.twig' %}
 
         {% block body %}
