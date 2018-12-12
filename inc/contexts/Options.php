@@ -68,9 +68,20 @@ class Options {
         $header = get_field('title_screen_header');
         
         if (is_front_page() && is_section()) {
-            $header = true;
+            $header = false;
         }
         
+        return $header;
+    }
+
+    public function is_section_home() 
+    {
+        $header = false;
+
+        if (is_front_page() && is_section()) {
+            $header = true;
+        }
+
         return $header;
     }
 }

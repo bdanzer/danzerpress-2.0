@@ -85,11 +85,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
             }
         ],
         [
@@ -99,9 +94,9 @@
                 "value": "page"
             },
             {
-                "param": "page_type",
+                "param": "page_template",
                 "operator": "!=",
-                "value": "front_page"
+                "value": "danzerpress-sections.php"
             }
         ]
     ],
@@ -113,5 +108,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538804338
+    "modified": 1544653854
 }

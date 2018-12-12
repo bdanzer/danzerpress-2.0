@@ -109,24 +109,27 @@
 	.dark-logo {
 		display: none;
 	}
-	&.danzerpress-trans {
+}
+
+.danzerpress-trans {
+	header {
 		.drawer-hamburger-icon, .drawer-hamburger-icon:after, .drawer-hamburger-icon:before {
 			background: $white;
 		}
 	}
-	&.danzerpress-non-trans {
-		background: $white;
-		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.078);
-		.light-logo {
-			display: none;
-		}
-		.dark-logo {
-			display: block;
-		}
-		li {
-			a {
-				color: black !important;
-			}
+}
+.danzerpress-non-trans header {
+	background: $white;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.078);
+	.light-logo {
+		display: none;
+	}
+	.dark-logo {
+		display: block;
+	}
+	li {
+		a {
+			color: black !important;
 		}
 	}
 }

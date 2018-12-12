@@ -1,5 +1,5 @@
 {% if not options.hide_nav %}
-	<header class="drawer-navbar drawer-navbar--fixed{{ (options.get_trans_nav and false == options.hide_header) ? '' : ' danzerpress-non-trans' }}" role="banner">
+	<header class="drawer-navbar drawer-navbar--fixed" role="banner">
 		<div class="drawer-container">
 			<div class="drawer-navbar-header">
 				{% include 'assets/logo.twig' %}
@@ -27,8 +27,8 @@
 		</div>
 	</header>
 {% endif %}
- 
-{% if false == options.hide_header %}
+
+{% if false == options.hide_header and false == options.is_section_home %}
 	<div class="danzerpress-title-area danzerpress-flex-column danzerpress-align-content danzerpress-justify-content">
 		{{dpImage(post.get_header_thumbnail, 'danzerpress-parallax')}}
 		<div class="danzerpress-wrap">
