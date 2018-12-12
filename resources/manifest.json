@@ -2,8 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/main.js",
-        "scripts/babel.js"
+        "scripts/*.js"
       ],
       "main": true
     },
@@ -23,7 +22,7 @@
     }
   },
   "config": {
-    "devUrl": "https://dev1.equinedge.com"
+    "devUrl": "https://dev.secureonline.com"
   },
   "paths": {
     "source": "resources/",

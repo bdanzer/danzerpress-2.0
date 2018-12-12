@@ -1,3 +1,1 @@
-class Slider {
-    
-}
+console.log('works');
