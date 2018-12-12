@@ -244,6 +244,4 @@ if (jQuery) {
   });
 }
 "use strict";
-
-console.log('works');
 //# sourceMappingURL=babel.js.map
