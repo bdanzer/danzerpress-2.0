@@ -46,7 +46,7 @@ class Image extends TimberImage {
         $image_class = ($image['class']) ? $image['class'] : '';
 
         $image_src = apply_filters('dp_image_src', $image_src);
-        $image_src = apply_filters('dp_image_alt', $image_alt);
+        $image_alt = apply_filters('dp_image_alt', $image_alt);
         $image_class = apply_filters('dp_image_src', $image_class);
 
         $class = 'class="' . $image_class . '" ';
