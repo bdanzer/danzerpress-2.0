@@ -29,9 +29,9 @@ Class DP_Theme {
                 'menu_title'  => 'Footer',
                 'parent_slug' => 'theme-general-settings',
             ));
-        }
 
-        add_action( 'admin_init', [$this, 'jp_sync_acf_fields'] );
+            add_action( 'admin_init', [$this, 'jp_sync_acf_fields'] );
+        }
 
         if (class_exists('Timber')) {
             new TwigLoading;

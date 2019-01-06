@@ -45,6 +45,10 @@ class Image extends TimberImage {
         $image_alt = ($image['alt']) ? $image['alt'] : 'Image';
         $image_class = ($image['class']) ? $image['class'] : '';
 
+        $image_src = apply_filters('dp_image_src', $image_src);
+        $image_src = apply_filters('dp_image_alt', $image_alt);
+        $image_class = apply_filters('dp_image_src', $image_class);
+
         $class = 'class="' . $image_class . '" ';
         $src = 'src="' . $image_src . '"';
         $alt = 'alt="' . $image_alt . '" ';
@@ -56,6 +60,8 @@ class Image extends TimberImage {
             $html = str_replace('#src#', $image_src, $html);
         }
         //set_transient($this->cache_id . '_dp_image', $html, 999);
+
+        $html = apply_filters('dp_image_html', $html);
 
         return $html;
     }

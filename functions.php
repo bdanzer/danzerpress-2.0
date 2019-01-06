@@ -1,22 +1,15 @@
 <?php
 
-/**
- * Check if Timber is activated
- */
-if ( ! class_exists( 'Timber' ) ) {
-  add_action( 'admin_notices', function() {
-    echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
-  });
+if (!class_exists('Danzerpress\\DP')) {
+    if (!is_admin() && !is_wplogin()) {
+        wp_die('DanzerPress Plugin is required for theme to work, please <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a>');
+    }
 }
 
-if (!class_exists('Danzerpress\\DP')) {
-  add_action( 'admin_notices', function() {
-    echo '<div class="error"><p>Danzerpress theme depends on Danzerpress plugin to work, please <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a></p></div>';
-  });
-
-  if (!is_admin() && !is_wplogin()) {
-    wp_die('DanzerPress Plugin is required for theme to work, please <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a>');
-  }
+if (!class_exists('Timber')) {
+    if (!is_admin() && !is_wplogin()) {
+        wp_die('Timber is required for theme to work, please <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a>');
+    }
 }
 
 if (!function_exists('get_field')) {

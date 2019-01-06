@@ -82,6 +82,17 @@ Class RegisterPlugins {
                 'slug'         => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
                 'source'       => 'https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9MTA2NDY1fHR5cGU9cGVyc29uYWx8ZGF0ZT0yMDE3LTA1LTE2IDAzOjExOjEw', // The plugin source.
                 'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+                'force_activation' => true
+            ),
+
+            
+            //This is an example of how to include a plugin from an arbitrary external source in your theme.
+            array(
+                'name'         => 'DanzerPress Plugin', // The plugin name.
+                'slug'         => 'danzerpress-plugin', // The plugin slug (typically the folder name).
+                'source'       => 'https://github.com/bdanzer/danzerpress-plugin/archive/master.zip', // The plugin source.
+                'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+                'force_activation' => true
             ),
 
             // This is an example of how to include a plugin from a GitHub repository in your theme.
@@ -98,6 +109,7 @@ Class RegisterPlugins {
                 'name'     => 'Timber',
                 'slug'     => 'timber-library',
                 'required' => true,
+                'force_activation' => true
             ),
         );
 
