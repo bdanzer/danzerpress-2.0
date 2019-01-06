@@ -5,9 +5,7 @@
             </a>
         </div>
         <div class="danzerpress-box danzerpress-white">
-            <header>
-                <h2 class="entry-title"><a class="danzerpress-accent-color" href="{{ post.link }}">{{ post.title }}</a></h2>
-            </header>
+            <h2 class="entry-title"><a class="danzerpress-accent-color" href="{{ post.link }}">{{ post.title }}</a></h2>
             <div class="entry-summary">
                 {{ post.preview.length(10).force.end('').read_more('') }}
             </div>
