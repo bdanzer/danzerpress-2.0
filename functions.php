@@ -19,6 +19,20 @@ if (!function_exists('get_field')) {
 }
 
 /**
+ * Allows wordpress theme updates via github
+ */
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/bdanzer/danzerpress-2.0/',
+	__FILE__,
+	'danzerpress'
+);
+
+$myUpdateChecker->setAuthentication('9fbf7903495b966d0b5616ed2a6fa4563823c099');
+$myUpdateChecker->setBranch('master');
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+
+/**
  * Sage includes
  *
  * The $sage_includes array determines the code library included in your theme.
@@ -57,29 +71,6 @@ function is_wplogin(){
     $ABSPATH_MY = str_replace(array('\\','/'), DIRECTORY_SEPARATOR, ABSPATH);
     return ((in_array($ABSPATH_MY.'wp-login.php', get_included_files()) || in_array($ABSPATH_MY.'wp-register.php', get_included_files()) ) || (isset($_GLOBALS['pagenow']) && $GLOBALS['pagenow'] === 'wp-login.php') || $_SERVER['PHP_SELF']== '/wp-login.php');
 }
-
-function dpDie($value) {
-  if (is_array($value)) {
-    var_dump($value);
-  } else {
-    var_dump($value);
-  }
-  die;
-}
-
-require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/bdanzer/danzerpress-2.0/',
-	__FILE__,
-	'danzerpress'
-);
-//Optional: If you're using a private repository, specify the access token like this:
-//$myUpdateChecker->setAuthentication('your-token-here');
-
-//Optional: Set the branch that contains the stable release.
-//$myUpdateChecker->setBranch('master');
-
-$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
 new Danzerpress\DP_Theme;
 
