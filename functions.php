@@ -4,22 +4,25 @@
  * Check if Timber is activated
  */
 if ( ! class_exists( 'Timber' ) ) {
-    add_action( 'admin_notices', function() {
+  add_action( 'admin_notices', function() {
     echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
   });
-  return;
 }
 
 if (!class_exists('Danzerpress\\DP')) {
-    add_action( 'admin_notices', function() {
+  add_action( 'admin_notices', function() {
     echo '<div class="error"><p>Danzerpress theme depends on Danzerpress plugin to work, please <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a></p></div>';
   });
 
-  if (!is_admin()) {
+  if (!is_admin() && !is_wplogin()) {
     wp_die('DanzerPress Plugin is required for theme to work, please <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a>');
   }
+}
 
-  return;
+if (!function_exists('get_field')) {
+    if (!is_admin() && !is_wplogin()) {
+        wp_die('Advanced Custom Fields Pro is required for theme to work, please <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a>');
+    }
 }
 
 /**
@@ -38,7 +41,8 @@ $sage_includes = [
   'lib/extras.php',    // Custom functions
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
-  'lib/customizer.php' // Theme customizer
+  'lib/customizer.php', // Theme customizer
+  'lib/plugin_activation.php'
 ];
 
 foreach ($sage_includes as $file) {
@@ -54,6 +58,11 @@ unset($file, $filepath);
 $autoload_path = __DIR__ . '/vendor/autoload.php';
 if ( file_exists( $autoload_path ) ) {
     require_once( $autoload_path );
+}
+
+function is_wplogin(){
+    $ABSPATH_MY = str_replace(array('\\','/'), DIRECTORY_SEPARATOR, ABSPATH);
+    return ((in_array($ABSPATH_MY.'wp-login.php', get_included_files()) || in_array($ABSPATH_MY.'wp-register.php', get_included_files()) ) || (isset($_GLOBALS['pagenow']) && $GLOBALS['pagenow'] === 'wp-login.php') || $_SERVER['PHP_SELF']== '/wp-login.php');
 }
 
 function dpDie($value) {

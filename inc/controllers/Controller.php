@@ -44,7 +44,7 @@ class Controller {
          * Can filter the context and templates before render
          */
         $filters = apply_filters(basename($this->templates[0], '.twig') . '_render', $filters);
-        $filters = apply_filters('render', $filters);
+        $filters = apply_filters('dp_pre_render', $filters);
         $filters['context'] = apply_filters('controller_context', $filters['context']);
         
         Timber::render($filters['templates'], $filters['context']);

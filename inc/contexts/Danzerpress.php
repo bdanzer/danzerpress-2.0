@@ -8,11 +8,6 @@ use Danzerpress\Chunks\Chunks;
 class Danzerpress {
     public static $context;
 
-    public function __construct() 
-    {
-
-    }
-
     public static function get_context() 
     {
         if (!isset(self::$context)) {
