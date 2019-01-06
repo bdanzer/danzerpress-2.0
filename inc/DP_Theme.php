@@ -4,7 +4,7 @@ namespace Danzerpress;
 use Danzerpress\Twig\TwigLoading;
 use Danzerpress\Rest\RestApi;
 use Danzerpress\Ajax\Ajax;
-use Danzerpress\autoupdater\RegisterPlugins;
+use Danzerpress\autoinstaller\RegisterPlugins;
 
 Class DP_Theme {
     public function __construct() 
@@ -81,7 +81,7 @@ Class DP_Theme {
         // bail if no sync needed
         if( !empty( $sync ) ) {
             add_action( 'admin_notices', function() {
-                echo '<div class="error"><p>ACF Needs to be synced: <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a></p></div>';
+                echo '<div class="error"><p>ACF needs to be synced: <a href="' . esc_url( admin_url( 'edit.php?post_type=acf-field-group' ) ) . '">Sync Here</a></p></div>';
             });
         }
     }
