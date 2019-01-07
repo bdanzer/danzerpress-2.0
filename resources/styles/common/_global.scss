@@ -85,6 +85,32 @@ img {
   width: 100%;
 }
 
+/**inputs**/
+input[type="text"], 
+input[type="email"], 
+input[type="url"], 
+input[type="password"], 
+input[type="search"], 
+input[type="number"], 
+input[type="tel"], 
+input[type="range"], 
+input[type="date"], 
+input[type="month"], 
+input[type="week"], 
+input[type="time"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="color"], 
+textarea, 
+select {
+    color: #404040;
+    width: 100%;
+    background: #f8f9f9;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
 /*Comments*/
 .comments-area {
   padding: 40px 0;
@@ -94,12 +120,6 @@ img {
     margin: auto;
     h3 {
       font-size: 22px;
-    }
-    textarea {
-      background: $white;
-    }
-    input {
-      background: $white;
     }
     .comment-content {
       background: $white;

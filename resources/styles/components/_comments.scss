@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+	display: block;
+}
+form#commentform input[type="text"], 
+form#commentform input[type="email"], 
+form#commentform input[type="url"], 
+form#commentform input[type="password"], 
+form#commentform input[type="search"], 
+form#commentform input[type="number"], 
+form#commentform input[type="tel"], 
+form#commentform input[type="range"], 
+form#commentform input[type="date"], 
+form#commentform input[type="month"], 
+form#commentform input[type="week"], 
+form#commentform input[type="time"], 
+form#commentform input[type="datetime"], 
+form#commentform input[type="datetime-local"], 
+form#commentform input[type="color"], 
+form#commentform textarea {
+    width: 100%;
+    /*background: #f8f9f9;*/
+}
+.comment-list li {
+    background: white;
+    padding: 20px;
+    list-style: none;
+    margin-bottom: 20px;
+}
+.danzerpress-comments {
+    background: #f8f9f9;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+li.depth-1 {
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.16);
+}
+ol.comment-list {
+    margin: 0;
+    padding: 0;
+}
+ol.children {
+    margin: 0;
+    padding-left: 0;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+li.odd {
+    background: #f8f9f9;
+}
