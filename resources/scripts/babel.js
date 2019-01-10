@@ -244,4 +244,64 @@ if (jQuery) {
   });
 }
 "use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var $ = jQuery;
+document.addEventListener('DOMContentLoaded', function () {
+  var NavLevel =
+  /*#__PURE__*/
+  function () {
+    function NavLevel() {
+      _classCallCheck(this, NavLevel);
+
+      this.counter = -1;
+      this.dropDowns = document.querySelectorAll('.drawer-dropdown-menu.dropdown-children');
+      console.log(this.dropDowns);
+
+      var _this = this;
+
+      $('.fa-caret-down').on("click", function () {
+        $(this).stop().toggle();
+        $(this).next().stop().toggle();
+        $(this).next().next().stop().fadeToggle();
+      });
+      $('.fa-caret-up').on("click", function () {
+        $(this).stop().toggle();
+        $(this).prev().stop().toggle();
+        $(this).next().stop().fadeToggle();
+      });
+      $('ul li .fa-caret-right').on("click", function () {
+        _this.counter = _this.counter + 1;
+        _this.dropDowns[_this.counter].style.display = 'block';
+        $(this).parent().addClass('li-open');
+        var isUlOpen = $('.ul-open');
+
+        if (isUlOpen) {
+          isUlOpen.removeClass('ul-open');
+        }
+
+        $(this).next().addClass('ul-open');
+      });
+      $('.drawer-dropdown-menu.dropdown-children .fa-arrow-left').on("click", function () {
+        _this.dropDowns[_this.counter].style.display = 'none';
+        _this.counter = _this.counter - 1;
+      });
+    }
+
+    _createClass(NavLevel, [{
+      key: "listenMenuButtons",
+      value: function listenMenuButtons() {}
+    }]);
+
+    return NavLevel;
+  }();
+
+  new NavLevel();
+});
+"use strict";
 //# sourceMappingURL=babel.js.map

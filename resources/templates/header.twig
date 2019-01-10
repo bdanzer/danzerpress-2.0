@@ -7,23 +7,7 @@
 					<span class="drawer-hamburger-icon"></span>
 				</button>
 			</div>
-			<nav class="drawer-nav" role="navigation">
-				<ul class="drawer-menu ">
-                    {% for item in menu.get_items %}
-                        <li class="{{item.classes|join(' ')}}"><a class="{{ (item.get_children) ? 'drawer-dropdown' }}" href="{{item.get_link}}">{{item.title}}</a>
-                            {% if item.get_children %}
-                                <span class="drawer-caret"></span>
-                                <ul class="drawer-dropdown-menu">
-                                    {% for child in item.get_children %}
-                                        <li><a class="drawer-dropdown-menu-item" href="{{child.get_link}}">{{child.title}}</a></li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-                        </li>
-                    {% endfor %}
-                    {{site.header_hook}}
-				</ul>
-			</nav>
+			{% include 'menu/menu.twig' %}
 		</div>
 	</header>
 {% endif %}

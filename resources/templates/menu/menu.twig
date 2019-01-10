@@ -1,0 +1,15 @@
+<nav class="drawer-nav" role="navigation">
+    <ul class="drawer-menu ">
+        {% for item in menu.get_items %}
+            <li class="{{item.classes|join(' ')}} is-menu-parent"><a class="{{ (item.get_children) ? 'drawer-dropdown' }}" href="{{item.get_link}}">{{item.title}}</a>
+                {% if item.get_children %}
+                    <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-caret-up"></i>
+                    <ul class="drawer-dropdown-menu">
+                        {% include 'menu/menu-layer.twig' %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

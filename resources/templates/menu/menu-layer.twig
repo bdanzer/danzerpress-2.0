@@ -1,0 +1,7 @@
+{% import "macro/menu-macro.twig" as menu %}
+
+{% for child in item.get_children %}
+    <li class="{{child.classes|join(' ')}}"><a class="drawer-dropdown-menu-item" href="{{child.get_link}}">{{child.title}}</a>
+        {{menu.levels(child)}}
+    </li>
+{% endfor %}
