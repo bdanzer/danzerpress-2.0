@@ -40,6 +40,10 @@ Class DP_Theme {
         new RegisterPlugins;
         new RestApi;
         new Ajax;
+
+        add_action( 'after_setup_theme', [$this, 'align_wide_support'] );
+
+        do_action('dp_theme_setup');
     }
 
     /**
@@ -84,5 +88,9 @@ Class DP_Theme {
                 echo '<div class="error"><p>ACF needs to be synced: <a href="' . esc_url( admin_url( 'edit.php?post_type=acf-field-group' ) ) . '">Sync Here</a></p></div>';
             });
         }
+    }
+
+    public function align_wide_support() {
+        add_theme_support( 'align-wide' );
     }
 }
