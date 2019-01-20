@@ -4,30 +4,45 @@ document.addEventListener('DOMContentLoaded', function() {
     class NavLevel {
         constructor() 
         {
+            this.open = false;
             this.counter = -1;
             this.dropDowns = document.querySelectorAll('.drawer-dropdown-menu.dropdown-children');
+            this.caretUp = $('.fa-caret-up');
+            this.caretDown = $('.fa-caret-down');
 
-            console.log(this.dropDowns);
+            this.init();
+        }
 
-            var _this = this;
+        init() 
+        {
+            this.caretDown.on("click", (event) => {
+                var caretD = $(event.target),
+                    caretUp = caretD.next(),
+                    ulMenu = caretD.next().next(),
+                    parent = caretD.parent();
 
-            $('.fa-caret-down').on("click", function() {
-                $(this).stop().toggle();
-                $(this).next().stop().toggle();
-                $(this).next().next().stop().fadeToggle();
+                if ($('.parent-li-open').length) {
+                    this.cleanMenu();
+                }
+
+                parent.addClass('parent-li-open');
+
+                caretD.stop().toggleClass('danzerpress-flex');
+                caretUp.stop().toggleClass('danzerpress-flex');
+                ulMenu.stop().toggle().toggleClass('ul-open');
             });
 
-            $('.fa-caret-up').on("click", function() {
-                $(this).stop().toggle();
-                $(this).prev().stop().toggle();
-                $(this).next().stop().fadeToggle();
+            this.caretUp.on("click", () => {
+                this.cleanMenu();
             });
 
-            $('ul li .fa-caret-right').on("click", function() {
-                _this.counter = _this.counter + 1;
-                _this.dropDowns[_this.counter].style.display = 'block';
+            $('ul li .fa-caret-right').on("click", (item) => {
+                var caretR = $(item.target);
 
-                $(this).parent().addClass('li-open');
+                this.counter = this.counter + 1;
+                this.dropDowns[this.counter].style.display = 'block';
+
+                caretR.parent().addClass('li-open');
 
                 var isUlOpen = $('.ul-open');
 
@@ -35,18 +50,43 @@ document.addEventListener('DOMContentLoaded', function() {
                     isUlOpen.removeClass('ul-open');
                 }
 
-                $(this).next().addClass('ul-open');
+                caretR.next().addClass('ul-open');
             });
 
-            $('.drawer-dropdown-menu.dropdown-children .fa-arrow-left').on("click", function() {
-                _this.dropDowns[_this.counter].style.display = 'none';
-                _this.counter = _this.counter - 1;
+            $('.drawer-dropdown-menu.dropdown-children .fa-chevron-left').on("click", () => {
+                this.dropDowns[this.counter].style.display = 'none';
+                this.counter = this.counter - 1;
             });
         }
 
-        listenMenuButtons() 
+        openMenu() 
         {
+
+        }
+
+        closeMenu() 
+        {
+
+        }
+
+        cleanMenu() 
+        {
+            this.counter = -1;
+
+            $('.parent-li-open .li-open')
+                .removeClass('li-open');
+
+            $('.parent-li-open .fa-caret-up')
+                .toggleClass('danzerpress-flex');
             
+            $('.parent-li-open .fa-caret-down')
+                .toggleClass('danzerpress-flex');
+            
+            $('.parent-li-open')
+                .removeClass('parent-li-open')
+                .find('ul')
+                .removeClass('ul-open')
+                .css({'display':'none'});
         }
     }
 

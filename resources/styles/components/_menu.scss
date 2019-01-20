@@ -4,23 +4,26 @@ i.fa.fa-caret-up {
     color: white;
     padding-left: 7px;
 }
-i.fa.fa-arrow-left, 
 i.fa.fa-caret-right,
 i.fa.fa-caret-down,
 i.fa.fa-caret-up {
     cursor: pointer;
     font-size: 16px;
 }
+i.fa.fa-chevron-left  {
+    cursor: pointer
+}
 .drawer-back-button {
     background: #21282d;
     color: white;
     text-align: center;
 }
-ul.drawer-dropdown-menu.dropdown-children > li.li-open,
-ul.drawer-dropdown-menu.dropdown-children.ul-open > li {
+nav ul > li.li-open,
+nav ul.ul-open > li,
+.is-menu-parent {
     display: flex !important;
 }
-ul.drawer-dropdown-menu.dropdown-children > li {
+nav ul > li {
     display: none !important;
 }
 ul.drawer-dropdown-menu li {
@@ -42,7 +45,8 @@ ul {
         padding: 0;
         justify-content: center;
     }
-    i.fa.fa-caret-up {
+    i.fa.fa-caret-up,
+    i.fa.fa-caret-down {
         display: none;
     }
 }
