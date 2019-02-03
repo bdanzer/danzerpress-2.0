@@ -4,11 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     class NavLevel {
         constructor() 
         {
-            this.open = false;
-            this.counter = -1;
-            this.dropDowns = document.querySelectorAll('.drawer-dropdown-menu.dropdown-children');
             this.caretUp = $('.fa-caret-up');
             this.caretDown = $('.fa-caret-down');
+            this.backButton = $('.drawer-dropdown-menu.dropdown-children .fa-chevron-left');
 
             this.init();
         }
@@ -37,42 +35,39 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             $('ul li .fa-caret-right').on("click", (item) => {
-                var caretR = $(item.target);
-
-                this.counter = this.counter + 1;
-                this.dropDowns[this.counter].style.display = 'block';
+                let caretR = $(item.target),
+                    nextUl = caretR.next();
 
                 caretR.parent().addClass('li-open');
 
-                var isUlOpen = $('.ul-open');
+                let currentUl = $('.ul-open');
 
-                if (isUlOpen) {
-                    isUlOpen.removeClass('ul-open');
+                if (currentUl) {
+                    currentUl.removeClass('ul-open');
                 }
 
-                caretR.next().addClass('ul-open');
+                nextUl.addClass('ul-open').toggle();
             });
 
-            $('.drawer-dropdown-menu.dropdown-children .fa-chevron-left').on("click", () => {
-                this.dropDowns[this.counter].style.display = 'none';
-                this.counter = this.counter - 1;
+            this.backButton.on("click", (item) => {
+                let backButton = $(item.target),
+                    currentLi = $('.ul-open .li-open'),
+                    currentUl = backButton.closest('ul');
+
+                    currentLi.removeClass('li-open');
+
+                    currentUl
+                        .removeClass('ul-open')
+                        .toggle()
+                        .parent()
+                        .closest('ul')
+                        .addClass('ul-open');
+                        
             });
-        }
-
-        openMenu() 
-        {
-
-        }
-
-        closeMenu() 
-        {
-
         }
 
         cleanMenu() 
         {
-            this.counter = -1;
-
             $('.parent-li-open .li-open')
                 .removeClass('li-open');
 

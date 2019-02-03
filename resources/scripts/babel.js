@@ -259,11 +259,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function NavLevel() {
       _classCallCheck(this, NavLevel);
 
-      this.open = false;
-      this.counter = -1;
-      this.dropDowns = document.querySelectorAll('.drawer-dropdown-menu.dropdown-children');
       this.caretUp = $('.fa-caret-up');
       this.caretDown = $('.fa-caret-down');
+      this.backButton = $('.drawer-dropdown-menu.dropdown-children .fa-chevron-left');
       this.init();
     }
 
@@ -291,33 +289,28 @@ document.addEventListener('DOMContentLoaded', function () {
           _this.cleanMenu();
         });
         $('ul li .fa-caret-right').on("click", function (item) {
-          var caretR = $(item.target);
-          _this.counter = _this.counter + 1;
-          _this.dropDowns[_this.counter].style.display = 'block';
+          var caretR = $(item.target),
+              nextUl = caretR.next();
           caretR.parent().addClass('li-open');
-          var isUlOpen = $('.ul-open');
+          var currentUl = $('.ul-open');
 
-          if (isUlOpen) {
-            isUlOpen.removeClass('ul-open');
+          if (currentUl) {
+            currentUl.removeClass('ul-open');
           }
 
-          caretR.next().addClass('ul-open');
+          nextUl.addClass('ul-open').toggle();
         });
-        $('.drawer-dropdown-menu.dropdown-children .fa-chevron-left').on("click", function () {
-          _this.dropDowns[_this.counter].style.display = 'none';
-          _this.counter = _this.counter - 1;
+        this.backButton.on("click", function (item) {
+          var backButton = $(item.target),
+              currentLi = $('.ul-open .li-open'),
+              currentUl = backButton.closest('ul');
+          currentLi.removeClass('li-open');
+          currentUl.removeClass('ul-open').toggle().parent().closest('ul').addClass('ul-open');
         });
       }
     }, {
-      key: "openMenu",
-      value: function openMenu() {}
-    }, {
-      key: "closeMenu",
-      value: function closeMenu() {}
-    }, {
       key: "cleanMenu",
       value: function cleanMenu() {
-        this.counter = -1;
         $('.parent-li-open .li-open').removeClass('li-open');
         $('.parent-li-open .fa-caret-up').toggleClass('danzerpress-flex');
         $('.parent-li-open .fa-caret-down').toggleClass('danzerpress-flex');
