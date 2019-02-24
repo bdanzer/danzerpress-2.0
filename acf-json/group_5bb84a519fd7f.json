@@ -1387,46 +1387,7 @@
                     "name": "code",
                     "label": "Code Section",
                     "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_5a58537b1a083",
-                            "label": "Raw Code",
-                            "name": "raw_code",
-                            "type": "textarea",
-                            "instructions": "<div class=\"danzerpress-four-fifths danzerpress-col-center\">\r\n      <where your code will go>\r\n<\/div>",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": ""
-                        },
-                        {
-                            "key": "dp_custom_css_class",
-                            "label": "Custom CSS Class",
-                            "name": "custom_css_class",
-                            "type": "text",
-                            "instructions": "This is not required, this is just for people who want to add more specific CSS styling.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 }
@@ -1455,5 +1416,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1550989729
+    "modified": 1550993941
 }
