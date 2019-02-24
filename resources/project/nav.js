@@ -36,7 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             $('ul li .fa-caret-right').on("click", (item) => {
                 let caretR = $(item.target),
-                    nextUl = caretR.next();
+                    nextUl = caretR.next(),
+                    currentLi = $('.ul-open .li-open');
+
+                /**
+                 * clean This Repeated
+                 */
+                currentLi.removeClass('li-open');
 
                 caretR.parent().addClass('li-open');
 
@@ -54,14 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentLi = $('.ul-open .li-open'),
                     currentUl = backButton.closest('ul');
 
-                    currentLi.removeClass('li-open');
+                /**
+                 * Clean This Repeated
+                 */
+                currentLi.removeClass('li-open');
 
-                    currentUl
-                        .removeClass('ul-open')
-                        .toggle()
-                        .parent()
-                        .closest('ul')
-                        .addClass('ul-open');
+                currentUl
+                    .removeClass('ul-open')
+                    .toggle()
+                    .parent()
+                    .closest('ul')
+                    .addClass('ul-open');
                         
             });
         }

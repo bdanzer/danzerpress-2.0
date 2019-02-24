@@ -290,7 +290,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         $('ul li .fa-caret-right').on("click", function (item) {
           var caretR = $(item.target),
-              nextUl = caretR.next();
+              nextUl = caretR.next(),
+              currentLi = $('.ul-open .li-open');
+          /**
+           * clean This Repeated
+           */
+
+          currentLi.removeClass('li-open');
           caretR.parent().addClass('li-open');
           var currentUl = $('.ul-open');
 
@@ -304,6 +310,10 @@ document.addEventListener('DOMContentLoaded', function () {
           var backButton = $(item.target),
               currentLi = $('.ul-open .li-open'),
               currentUl = backButton.closest('ul');
+          /**
+           * Clean This Repeated
+           */
+
           currentLi.removeClass('li-open');
           currentUl.removeClass('ul-open').toggle().parent().closest('ul').addClass('ul-open');
         });
