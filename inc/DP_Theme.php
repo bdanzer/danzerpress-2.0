@@ -9,6 +9,8 @@ use Danzerpress\autoinstaller\RegisterPlugins;
 Class DP_Theme {
     public function __construct() 
     {
+        do_action('dp_theme_pre_load');
+
         if( function_exists('acf_add_options_page') ) { 
             acf_add_options_page(array(
                 'page_title'  => 'Theme General Settings',
@@ -43,7 +45,7 @@ Class DP_Theme {
 
         add_action( 'after_setup_theme', [$this, 'align_wide_support'] );
 
-        do_action('dp_theme_setup');
+        do_action('dp_theme_loaded');
     }
 
     /**

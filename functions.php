@@ -1,6 +1,6 @@
 <?php
 
-if (!class_exists('Danzerpress\\DP')) {
+if (!did_action('dp_plugin_init')) {
     if (!is_admin() && !is_wplogin()) {
         wp_die('DanzerPress Plugin is required for theme to work, please <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '"> activate</a>');
     }
@@ -73,12 +73,3 @@ function is_wplogin(){
 }
 
 new Danzerpress\DP_Theme;
-
-function is_section() {
-  $sections = 'Danzerpress\\Sections';
-  if (class_exists($sections)) {
-    return $sections::is_section();
-  } 
-
-  return false;
-}

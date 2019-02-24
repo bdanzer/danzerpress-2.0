@@ -4,4 +4,6 @@ Template Name: Sections - DanzerPress
 */
 
 use Danzerpress\Sections;
-new Sections();
+
+$sections = new Sections();
+$sections->render();
