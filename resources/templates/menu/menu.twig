@@ -1,11 +1,11 @@
-<nav class="drawer-nav" role="navigation">
+<nav class="drawer-nav" role="navigation" aria-label="main navigation">
     <ul class="drawer-menu ">
         {% for item in menu.get_items %}
             <li class="{{item.classes|join(' ')}} is-menu-parent"><a class="{{ (item.get_children) ? 'drawer-dropdown' }}" href="{{item.get_link}}">{{item.title}}</a>
                 {% if item.get_children %}
                     <i class="fa fa-caret-down danzerpress-flex"></i>
                     <i class="fa fa-caret-up"></i>
-                    <ul class="drawer-dropdown-menu">
+                    <ul class="drawer-dropdown-menu" aria-haspopup="true">
                         {% include 'menu/menu-layer.twig' %}
                     </ul>
                 {% endif %}

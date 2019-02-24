@@ -3,7 +3,7 @@
 
     {% if child.get_children %}
         <i class="fa fa-caret-right"></i>
-        <ul class="drawer-dropdown-menu dropdown-children">
+        <ul class="drawer-dropdown-menu dropdown-children" aria-haspopup="true">
             <div class="drawer-back-button danzerpress-accent-background"><i class="fa fa-chevron-left"></i></div>
             {% for child3 in child.get_children %}
                 <li class="{{child3.classes|join(' ')}}"><a class="drawer-dropdown-menu-item" href="{{child3.get_link}}">{{child3.title}}</a>

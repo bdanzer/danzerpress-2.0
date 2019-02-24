@@ -95,4 +95,9 @@ Class DP_Theme {
     public function align_wide_support() {
         add_theme_support( 'align-wide' );
     }
+
+    public static function get_ver() 
+    {
+        return wp_get_theme(basename(get_template_directory(), '.php'))->get('Version');
+    }
 }
