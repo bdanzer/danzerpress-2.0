@@ -18,11 +18,14 @@ Class Ajax {
         ));
     }
 
+    /**
+     * TODO: Add support for post types/archives
+     */
     public function infinite_scroll() {
         $data = $_POST['data'];
         
         $posts = Timber::get_posts([
-            'posts_per_page' => $data['per_page'],
+            'posts_per_page' => (isset($data['per_page'])) ? $data['per_page'] : 10,
             'paged' => $data['page'],
             'post_type' => 'post',
             'post_status' => 'publish'
@@ -40,7 +43,7 @@ Class Ajax {
             ];
             $html .= Timber::compile(apply_filters('ajax_template', [$data['template'], 'content.twig']), $context);
         }
-
+        
         wp_send_json_success($html);        
         die();
     }

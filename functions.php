@@ -29,7 +29,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 $myUpdateChecker->setAuthentication('9fbf7903495b966d0b5616ed2a6fa4563823c099');
-$myUpdateChecker->setBranch('master');
+$myUpdateChecker->setBranch((get_field('dp_env', 'options')) ?: 'master');
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
 /**
@@ -42,8 +42,7 @@ $myUpdateChecker->getVcsApi()->enableReleaseAssets();
  *
  * @link https://github.com/roots/sage/pull/1042
  */
-$sage_includes = [
-  'lib/timber.php', 			// Twig magic
+$sage_includes = [ 			// Twig magic
   'lib/assets.php',    // Scripts and stylesheets
   'lib/extras.php',    // Custom functions
   'lib/setup.php',     // Theme setup

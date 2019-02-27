@@ -9,6 +9,7 @@
 		}
 	}
 }
+
 .drawer--navbarTopGutter {
     padding-top: 0;
 }
@@ -31,10 +32,8 @@
 		}
 		&.is-menu-parent {
 			> ul {
-				//display: block;
 				top: 56px;
-				left: 0;
-				//left: -47px;
+				right: 0;
 				li {
 					&:hover {
 						border-color: transparent !important;
@@ -180,7 +179,8 @@
 		}
 	}
 }
-.danzerpress-non-trans header {
+.danzerpress-non-trans header,
+.dp-no-js header {
 	background: $white;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.078);
 	.light-logo {

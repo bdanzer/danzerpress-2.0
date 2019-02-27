@@ -40,7 +40,7 @@
               // Using jQuery's animate() method to add smooth page scroll
               // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
               $('html, body').animate({
-                scrollTop: $(hash).offset().top + (-64)
+                scrollTop: $(hash).offset().top - $('header').outerHeight() + 5
               }, 1000, function(){
            
                 // Add hash (#) to URL when done scrolling (default click behavior)
@@ -67,9 +67,14 @@
           //Fix transparent menu when scrolling
           var a = $("html").offset().top;
 
+          var checkJs = $('.dp-no-js');
+          if (checkJs) {
+            checkJs.removeClass('dp-no-js').addClass('dp-js');
+          }
+
           $(document).scroll(function(){
               if($(this).scrollTop() > a)
-              {   
+              {  
                 $('body').addClass("danzerpress-non-trans").removeClass("danzerpress-trans");
                 $('.danzerpress-emergency-header').addClass("danzerpress-no-display");
               } else {

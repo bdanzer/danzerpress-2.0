@@ -2,7 +2,7 @@
 
 {% block content %}
     {% block title %}{% endblock %}
-    {% include 'parts/infinite_scroll.twig' with {columns: 3} %}
+    {{ chunks.InfiniteScroll(_context) }}
 {% endblock %}
 
 {% block comments %}{% endblock %}

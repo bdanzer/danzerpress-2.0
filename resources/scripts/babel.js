@@ -222,6 +222,7 @@ function () {
   return InfiniteScroll;
 }();
 
+console.log('works');
 var archive = document.getElementById('infinite-row');
 
 if (archive) {

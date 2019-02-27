@@ -2,10 +2,7 @@
 namespace Danzerpress\Chunks;
 
 class Chunks {
-    public function __construct() 
-    {
-
-    }
+    public function __construct() {}
 
     public function __call($name, $arguments) 
     {
@@ -14,6 +11,7 @@ class Chunks {
         
         foreach ($namespaces as $namespace) {
             $class = $namespace . $name;
+
             if (class_exists($class)) {
                 $class::chunk($arguments);
             }

@@ -8,8 +8,6 @@ class InfiniteScroll {
         this.stop = false;
         this.spinner = jQuery('#spinner');
         this.archive = archive;
-
-        console.log(this.template);
     }
     
     calculateScroll() {
@@ -67,6 +65,7 @@ class InfiniteScroll {
     }
 }
 
+console.log('works');
 var archive = document.getElementById('infinite-row');
 if (archive) {
     var infinite = new InfiniteScroll(archive);
