@@ -1,24 +1,6 @@
 {
     "key": "group_59ffd8ec213a1",
     "title": "General Theme Settings",
-    "location": [
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "theme-general-settings"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1546757968,
     "fields": [
         {
             "key": "field_5b26776208dd9",
@@ -250,6 +232,51 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_5c763316d3e72",
+            "label": "DanzerPress Environment",
+            "name": "dp_env",
+            "type": "select",
+            "instructions": "Develop is unstable, always keep on master if site is life",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "master": "master",
+                "develop": "develop"
+            },
+            "default_value": [
+                "master"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
-    ]
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1551250323
 }

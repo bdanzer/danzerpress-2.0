@@ -13,10 +13,10 @@ class Danzerpress {
         if (!isset(self::$context)) {
             self::$context = [];
             self::$context['menu'] = new Timber\Menu;
+            self::$context['options'] = new Options();
             self::$context['body_class'] = self::get_body_class();
             self::$context['site'] = new DanzerpressSite();
             self::$context['chunks'] = new Chunks();
-            self::$context['options'] = new Options();
         }
         return self::$context;
     }
@@ -36,7 +36,7 @@ class Danzerpress {
             'drawer--navbarTopGutter'
         ];
 
-        if (self::$context['options']->hide_header && false == self::$contenxt['options']->hide_nav) {
+        if (self::$context['options']->hide_header() && false == self::$context['options']->hide_nav()) {
             $classes[] = 'hide-header';
             $classes[] = 'danzerpress-non-trans';
         } else {
