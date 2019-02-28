@@ -1,8 +1,8 @@
 <?php
 namespace Danzerpress\Controllers;
 
-use Danzerpress\Contexts\Danzerpress;
-use Danzerpress\Contexts\DanzerpressPostContext;
+use Danzerpress\contexts\Danzerpress;
+use Danzerpress\contexts\PostContext;
 use Timber;
 
 class Controller {
@@ -16,7 +16,7 @@ class Controller {
         }
 
         $this->context = Danzerpress::get_context();
-        $this->context['post'] = Timber::get_post(get_the_ID(), DanzerpressPostContext::class);
+        $this->context['post'] = Timber::get_post(get_the_ID(), PostContext::class);
         $this->context['sidebar_primary'] = Timber::get_widgets('sidebar-primary');
 
         if ($context) {

@@ -1,11 +1,8 @@
 <?php
-namespace Danzerpress\Contexts;
+namespace Danzerpress\contexts;
 
 class Options {
-    public function __construct() 
-    {
-        
-    }
+    public function __construct() {}
 
     public function get_theme_color() 
     {

@@ -1,5 +1,5 @@
 <?php
-use Danzerpress\Contexts\Danzerpress;
+use Danzerpress\contexts\Danzerpress;
 
 $context = Danzerpress::get_context();
 $context['posts'] = Timber::get_posts();
