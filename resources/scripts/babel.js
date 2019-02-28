@@ -153,7 +153,6 @@ function () {
     this.stop = false;
     this.spinner = jQuery('#spinner');
     this.archive = archive;
-    console.log(this.template);
   }
 
   _createClass(InfiniteScroll, [{

@@ -3,6 +3,25 @@
     "title": "General Theme Settings",
     "fields": [
         {
+            "key": "field_5c773e94fc2ea",
+            "label": "SVG Image",
+            "name": "svg_image",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_5b26776208dd9",
             "label": "Transparent Logo",
             "name": "transparent_logo",
@@ -278,5 +297,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1551250323
+    "modified": 1551318700
 }

@@ -4,6 +4,11 @@ namespace Danzerpress\contexts;
 class Options {
     public function __construct() {}
 
+    public function get_svg_image() 
+    {
+        return get_field('svg_image', 'options');
+    }
+
     public function get_theme_color() 
     {
         $color = get_field('theme_color', 'options');
