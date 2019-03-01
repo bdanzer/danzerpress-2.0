@@ -50,6 +50,7 @@
 	}
 	&.drawer-navbar--fixed {
 		.drawer-container {
+			max-width: 1400px;
 			display: flex;
 			justify-content: space-between;
 			.drawer-navbar-header {
