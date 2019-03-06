@@ -18,7 +18,7 @@ class Danzerpress {
             self::$context['site'] = new Site();
             self::$context['chunks'] = new Chunks();
         }
-        return self::$context;
+        return apply_filters('danzerpress_context', self::$context);
     }
 
     public static function get_ttl() 
