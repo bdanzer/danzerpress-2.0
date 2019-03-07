@@ -14,10 +14,15 @@
     padding-top: 0;
 }
 
+.dp-js {
+	.drawer-navbar {
+		transition: .5s;
+	}
+}
+
 .drawer-navbar {
 	background: transparent;
 	border: none;
-	transition: .5s;
 	z-index: 9999;
 	li.menu-item {
 		ul {
