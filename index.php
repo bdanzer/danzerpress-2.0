@@ -1,5 +1,5 @@
 <?php
-use Danzerpress\Contexts\Danzerpress;
+use Danzerpress\contexts\Danzerpress;
 use Danzerpress\loader\DanzerpressLoader;
 
 $context = Danzerpress::get_context();

@@ -1,18 +1,24 @@
 <?php
-namespace Danzerpress\Contexts;
+namespace Danzerpress\contexts;
 
 use Timber\Post as TimberPost;
 
-class DanzerpressPostContext extends TimberPost {
+class PostContext extends TimberPost {
+    public $options; 
+
     public function __construct($pid = null) 
     {   
         parent::__construct($pid);
     }
 
     public function get_header_thumbnail()
-    {
-        if (get_post_thumbnail_id($this->id)) {
-            return get_post_thumbnail_id($this->id);
+    {   
+        if ($thumbnail_id = get_field('title_area_image', 'options')) {
+            return $thumbnail_id;
+        }
+
+        if ($thumbnail_id = get_post_thumbnail_id($this->id)) {
+            return $thumbnail_id;
         }
     }
 

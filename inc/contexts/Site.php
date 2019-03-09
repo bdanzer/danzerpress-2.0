@@ -1,9 +1,9 @@
 <?php
-namespace Danzerpress\Contexts;
+namespace Danzerpress\contexts;
 
 use Timber\Site as TimberSite;
 
-class DanzerpressSite extends TimberSite {
+class Site extends TimberSite {
     public $body_class = [];
     
     public function __construct() 

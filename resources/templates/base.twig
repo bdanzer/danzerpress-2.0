@@ -6,13 +6,13 @@
         {% include 'templates/header.twig' %}
         
         {% block body %}
-            <div class="main-content">
+            <main class="main-content">
                 <div class="danzerpress-wrap">
                     {% block content %}
                         {% include 'parts/content-w-sidebar.twig' %}
                     {% endblock %}
                 </div>
-            </div>
+            </main>
 
             {% block comments %}
                 {% include 'parts/comments.twig' %}

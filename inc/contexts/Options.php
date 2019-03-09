@@ -1,10 +1,12 @@
 <?php
-namespace Danzerpress\Contexts;
+namespace Danzerpress\contexts;
 
 class Options {
-    public function __construct() 
+    public function __construct() {}
+
+    public function get_svg_image() 
     {
-        
+        return get_field('svg_image', 'options');
     }
 
     public function get_theme_color() 

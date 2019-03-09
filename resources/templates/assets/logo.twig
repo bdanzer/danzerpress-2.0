@@ -1,4 +1,10 @@
 <a class="drawer-brand" href="{{ function('home_url', '/') }}">
+    {% if options.get_svg_image %}
+        <div class="svg-image">
+            {{ options.get_svg_image }}
+        </div>
+    {% endif %}
+
     {% if options.get_light_logo %}
         {{ dpImage(options.get_light_logo, 'light-logo danzerpress-logo') }}
     {% endif %}

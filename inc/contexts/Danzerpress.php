@@ -1,6 +1,6 @@
 <?php
 
-namespace Danzerpress\Contexts;
+namespace Danzerpress\contexts;
 
 use Timber;
 use Danzerpress\Chunks\Chunks;
@@ -15,10 +15,10 @@ class Danzerpress {
             self::$context['menu'] = new Timber\Menu;
             self::$context['options'] = new Options();
             self::$context['body_class'] = self::get_body_class();
-            self::$context['site'] = new DanzerpressSite();
+            self::$context['site'] = new Site();
             self::$context['chunks'] = new Chunks();
         }
-        return self::$context;
+        return apply_filters('danzerpress_context', self::$context);
     }
 
     public static function get_ttl() 
