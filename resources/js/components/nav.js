@@ -103,13 +103,12 @@ class NavLevel {
             }
         
             $(document).scroll(function(){
-                if($(this).scrollTop() > a)
-                {  
-                $('body').addClass("danzerpress-non-trans").removeClass("danzerpress-trans");
-                $('.danzerpress-emergency-header').addClass("danzerpress-no-display");
+                if($(this).scrollTop() > a) {  
+                    $('body').addClass("danzerpress-non-trans").removeClass("danzerpress-trans");
+                    $('.danzerpress-emergency-header').addClass("danzerpress-no-display");
                 } else {
-                $('body').removeClass("danzerpress-non-trans").addClass("danzerpress-trans");
-                $('.danzerpress-emergency-header').removeClass("danzerpress-no-display");
+                    $('body').removeClass("danzerpress-non-trans").addClass("danzerpress-trans");
+                    $('.danzerpress-emergency-header').removeClass("danzerpress-no-display");
                 }
             });
         }
