@@ -29,7 +29,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 $myUpdateChecker->setAuthentication('9fbf7903495b966d0b5616ed2a6fa4563823c099');
-$myUpdateChecker->setBranch((get_field('dp_env', 'options')) ?: 'master');
+$myUpdateChecker->setBranch((function_exists('get_field') && get_field('dp_env', 'options')) ? get_field('dp_env', 'options') : 'master');
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
 /**
